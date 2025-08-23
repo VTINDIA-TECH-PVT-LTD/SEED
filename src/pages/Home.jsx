@@ -1,28 +1,31 @@
 import React from "react";
-import Banner from "../components/Banner";
-import AboutSection from "../components/AboutSection";
-import DonationSection from "../components/DonationSection";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/effect-fade";
+
+import Banner from "../components/Banner";
+import AboutSection from "../components/AboutSection";
 import Services from "../components/Services";
+import TeamSection from "../components/TeamSection";
+import Activities from "../components/Activities";
+import Testimonials from "../components/Testimonials";
 
 
 export default function Home() {
   return (
     <>
-      {/* Use Banner component */}
+
       <Banner />
 
-      {/* ✅ About Section component */}
       <AboutSection />
-      {/* ✅ DonationSection  component */}
+
       <Services />
 
+      <TeamSection />
 
+      <Activities />
 
-      {/* ✅ DonationSection  component */}
-      {/* <DonationSection/> */}
+      <Testimonials />
 
 
     </>

@@ -19,18 +19,18 @@ const AboutSection = () => {
           <div className="col-xl-6 col-lg-10">
             <div className="img-box2">
               <div className="img1">
-                <img src="assets/img/normal/about_2_1.png" alt="About" />
+                <img src="uploads/Aboutpic3.png" style={{ width: "410px", height: "500px" }} alt="About" />
               </div>
               <div className="img2 jump">
-                <img src="assets/img/normal/about_2_2.png" alt="About" />
+                <img src="uploads/Aboutpic1.png" alt="About" />
               </div>
               <div
                 className="img3 moving"
-                data-mask-src="assets/img/normal/about_2_3-mask.png"
+                data-mask-src="uploads/Aboutpic1.png"
               >
                 <img
                   data-mask-src="assets/img/normal/about_2_3-mask.png"
-                  src="assets/img/normal/about_2_3.png"
+                  src="uploads/Aboutpic2.png" style={{ width: "356px", height: "230px" }}
                   alt="About"
                 />
               </div>
@@ -38,21 +38,21 @@ const AboutSection = () => {
               {/* Decorative Shapes */}
               <div className="about-shape2-1 jump">
                 <div className="color-masking">
-                  <div
+                  {/* <div
                     className="masking-src"
                     data-mask-src="assets/img/shape/about_shape2_1.png"
-                  ></div>
+                  ></div> */}
                   <img src="assets/img/shape/about_shape2_1.png" alt="img" />
                 </div>
               </div>
               <div className="about-shape2-2 jump-reverse">
-                <div className="color-masking2">
+                {/* <div className="color-masking2">
                   <div
                     className="masking-src"
                     data-mask-src="assets/img/shape/about_shape2_2.png"
                   ></div>
                   <img src="assets/img/shape/about_shape2_2.png" alt="img" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@ const AboutSection = () => {
                 <span className="sub-title after-none before-none">
                   Welcome to SEED
                 </span>
-                <h2 className="sec-title">
+                <h2 id="aboutheading" className="sec-title">
                   Social, Educational & Environmental Development Center
                 </h2>
                 <p className="mt-30">
@@ -109,7 +109,7 @@ const AboutSection = () => {
 
               <div className="about-feature-grid">
                 <div className="box-icon">
-                  <img src="assets/img/icon/about-icon2-3.svg" alt="icon" />
+                  <img src="assets/img/icon/about-icon2-1.svg" alt="icon" />
                 </div>
                 <div className="media-body">
                   <h4 className="box-title">Environmental Care</h4>

@@ -1,366 +1,268 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import SideCart from "./SideCart";
 import seedLogo from "../assets/seedlogo.png";
-import { useState } from "react";
-import Topbar from "./Topbar";
-
+import SideCart from "./SideCart";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
- const [openSubmenu, setOpenSubmenu] = useState(null); // ✅ track submenu
+    const [menuOpen, setMenuOpen] = useState(false);
+   const [openSubmenu, setOpenSubmenu] = useState(null); // ✅ track submenu
+  
+    const toggleSubmenu = (menu) => {
+      setOpenSubmenu(openSubmenu === menu ? null : menu);
+    };
 
-  const toggleSubmenu = (menu) => {
-    setOpenSubmenu(openSubmenu === menu ? null : menu);
-  };
   return (
     <>
-      {/* <div className="preloader">
-        <button className="th-btn style2 preloaderCls">Cancel Preloader</button>
-        <div className="preloader-inner">
-          <span className="loader">
-            SEED
-            <span className="loading-text">SEED</span>
-          </span>
-        </div>
-      </div> */}
 
-      <SideCart />
-      <div className="popup-search-box d-none d-lg-block">
-        <button className="searchClose">
-          <i className="far fa-times"></i>
-        </button>
-        <form action="#">
-          <input type="text" placeholder="What are you looking for?" />
-          <button type="submit">
-            <i className="fal fa-search"></i>
-          </button>
-        </form>
-      </div>
-
-      {/* Mobile Menu */}
-      <div className={`th-menu-wrapper ${menuOpen ? "th-body-visible" : ""}`}>
-        <div className="th-menu-area text-center">
-          {/* <button className="th-menu-toggle"> */}
-          <button
-            className="th-menu-toggle"
-            onClick={() => setMenuOpen(false)}   // ✅ close
-          >
-            <i className="fal fa-times"></i>
-          </button>
-          <div className="mobile-logo">
-            <Link to="/">
-
-              <img
-                src={seedLogo}
-                alt="SEED Logo"
-                className="w-32"
-              />
-            </Link>
-          </div>
-
-          {/* Mobile Navigation */}
-          <div className="th-mobile-menu">
-            <ul>
-              <li><Link to="/home">Home</Link></li>
-
-              {/* <li className="menu-item-has-children">
-                <Link to="#">About Us</Link>
-                <ul className="sub-menu">
-                  <li><Link to="/about/overview">Overview</Link></li>
-                  <li><Link to="/about/vision-mission">Vision & Mission</Link></li>
-                  <li><Link to="/about/registration">Registration Details</Link></li>
-                  <li><Link to="/about/team">Team & Members</Link></li>
-                </ul>
-              </li> */}
-               {/* About Us */}
-              <li
-                className={`menu-item-has-children th-item-has-children ${
-                  openSubmenu === "about" ? "th-active" : ""
-                }`}
-              >
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleSubmenu("about");
-                  }}
-                >
-                  About Us <span className="th-mean-expand"></span>
-                </a>
-                <ul
-                  className={`th-submenu ${
-                    openSubmenu === "about" ? "th-open" : ""
-                  }`}
-                  style={{
-                    display: openSubmenu === "about" ? "block" : "none",
-                  }}
-                >
-                  <li>
-                    <Link to="/about/overview">Overview</Link>
-                  </li>
-                  <li>
-                    <Link to="/about/vision-mission">Vision & Mission</Link>
-                  </li>
-                  <li>
-                    <Link to="/about/registration">Registration Details</Link>
-                  </li>
-                  <li>
-                    <Link to="/about/team">Team & Members</Link>
-                  </li>
-                </ul>
-              </li>
-
-              {/* <li className="menu-item-has-children">
-                <Link to="#">Programs & Activities</Link>
-                <ul className="sub-menu">
-                  <li><Link to="/programs/human-rights">Human Rights Awareness</Link></li>
-                  <li><Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link></li>
-                  <li><Link to="/programs/women-empowerment">Women Empowerment</Link></li>
-                  <li><Link to="/programs/skill-development">Skill Development</Link></li>
-                  <li><Link to="/programs/cultural">Cultural Programs</Link></li>
-                  <li><Link to="/programs/education-scst">Education for SC/ST Girls</Link></li>
-                  <li><Link to="/programs/environment">Environment Awareness</Link></li>
-                  <li><Link to="/programs/sports">Sports Development</Link></li>
-                  <li><Link to="/programs/health-camps">Health Camps</Link></li>
-                </ul>
-              </li> */}
-               {/* Programs */}
-              <li
-                className={`menu-item-has-children th-item-has-children ${
-                  openSubmenu === "programs" ? "th-active" : ""
-                }`}
-              >
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleSubmenu("programs");
-                  }}
-                >
-                  Programs & Activities <span className="th-mean-expand"></span>
-                </a>
-                <ul
-                  className={`th-submenu ${
-                    openSubmenu === "programs" ? "th-open" : ""
-                  }`}
-                  style={{
-                    display: openSubmenu === "programs" ? "block" : "none",
-                  }}
-                >
-                  <li>
-                    <Link to="/programs/human-rights">Human Rights Awareness</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/women-empowerment">Women Empowerment</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/skill-development">Skill Development</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/cultural">Cultural Programs</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/education-scst">Education for SC/ST Girls</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/environment">Environment Awareness</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/sports">Sports Development</Link>
-                  </li>
-                  <li>
-                    <Link to="/programs/health-camps">Health Camps</Link>
-                  </li>
-                </ul>
-              </li>
-
-              <li><Link to="/annual">Annual Reports</Link></li>
-
-              {/* <li className="menu-item-has-children">
-                <Link to="#">Gallery</Link>
-                <ul className="sub-menu">
-                  <li><Link to="/gallery/photos">Photos</Link></li>
-                  <li><Link to="/gallery/videos">Videos</Link></li>
-                </ul>
-              </li> */}
-              {/* Gallery */}
-              <li
-                className={`menu-item-has-children th-item-has-children ${
-                  openSubmenu === "gallery" ? "th-active" : ""
-                }`}
-              >
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleSubmenu("gallery");
-                  }}
-                >
-                  Gallery <span className="th-mean-expand"></span>
-                </a>
-                <ul
-                  className={`th-submenu ${
-                    openSubmenu === "gallery" ? "th-open" : ""
-                  }`}
-                  style={{
-                    display: openSubmenu === "gallery" ? "block" : "none",
-                  }}
-                >
-                  <li><Link to="/gallery/photos">Photos</Link></li>
-                  <li><Link to="/gallery/videos">Videos</Link></li>
-                </ul>
-              </li>
-
-              <li><Link to="/annual">News & Events</Link></li>
-
-              {/* <li className="menu-item-has-children">
-                <Link to="#">Get Involved</Link>
-                <ul className="sub-menu">
-                  <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
-                  <li><Link to="/get-involved">Donate</Link></li>
-                  <li><Link to="/get-involved/partnership">Partnership</Link></li>
-                </ul>
-              </li> */}
-              {/* Get Involved */}
-              <li
-                className={`menu-item-has-children th-item-has-children ${
-                  openSubmenu === "getinvolved" ? "th-active" : ""
-                }`}
-              >
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    toggleSubmenu("getinvolved");
-                  }}
-                >
-                  Get Involved <span className="th-mean-expand"></span>
-                </a>
-                <ul
-                  className={`th-submenu ${
-                    openSubmenu === "getinvolved" ? "th-open" : ""
-                  }`}
-                  style={{
-                    display: openSubmenu === "getinvolved" ? "block" : "none",
-                  }}
-                >
-                  <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
-                  <li><Link to="/get-involved">Donate</Link></li>
-                  <li><Link to="/get-involved/partnership">Partnership</Link></li>
-                </ul>
-              </li>
-
-              <li><Link to="/contact">Contact Us</Link></li>
-            </ul>
-          </div>
-
-
-        </div>
-      </div>
-
-      {/* Color Switcher */}
-      <header className="th-header header-layout3">
-
-
-        {/* <Topbar /> */}
-
-        {/* ✅ Main Header */}
-        <div className="sticky-wrapper bg-white shadow">
-          <div className="container" id="setnav">
-            <div className="menu-area flex justify-between items-center py-3">
-              {/* Logo */}
-              <div className="header-logo">
-                <Link to="/">
-                  <img
-                    src={seedLogo}
-                    alt="SEED Logo"
-                    className="w-32"
-                  />
-
-                </Link>
+      <header className="th-header header-default">
+        {/* Top Bar */}
+        <div className="menu-top">
+          <div className="container">
+            <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
+              {/* Logo for Desktop */}
+              <div className="col-auto d-none d-lg-block">
+                <div className="header-logo">
+                  <Link to="/">
+                    <img src={seedLogo} alt="SEED Logo" />
+                  </Link>
+                </div>
               </div>
 
-              {/* Menu Items */}
+              {/* Contact Info */}
+              <div className="col-auto d-none d-md-block">
+                <div className="info-card-wrap">
+                  {/* Address */}
+                  <div className="info-card">
+                    <div className="box-icon">
+                      <i className="fal fa-map-marker-alt"></i>
+                      <div
+                        className="bg-shape1"
+                        data-mask-src="https://html.themeholy.com/donat/demo/assets/img/shape/info_card_icon_bg_shape_1_1.png"
+                      ></div>
+                      <div
+                        className="bg-shape2"
+                        data-mask-src="https://html.themeholy.com/donat/demo/assets/img/shape/info_card_icon_bg_shape_1_1.png"
+                      ></div>
+                    </div>
+                    <div className="box-content">
+                      <p className="box-text">Locate Address:</p>
+                      <h4 className="box-title">
+                        <a href="https://maps.google.com" id="headeraddress">
+                          Subhadra Nagar Lane, Bidanasi, Cuttack-14
+                        </a>
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="info-card">
+                    <div className="box-icon">
+                      <i className="fal fa-phone"></i>
+                      <div className="bg-shape1"></div>
+                      <div className="bg-shape2"></div>
+                    </div>
+                    <div className="box-content">
+                      <p className="box-text">Call us any time:</p>
+                      <h4 className="box-title">
+                        <a id="headertel" href="tel:9437314152">+91 9437314152</a>
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="info-card">
+                    <div className="box-icon">
+                      <i className="fal fa-envelope-open"></i>
+                      <div className="bg-shape1"></div>
+                      <div className="bg-shape2"></div>
+                    </div>
+                    <div className="box-content">
+                      <p className="box-text">Email us any time:</p>
+                      <h4 className="box-title">
+                        <a id="headeremail" href="mailto:seedodisha1971@gmail.com">
+                          seedodisha1971@gmail.com
+                        </a>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Icons */}
+              <div className="col-auto header-social-col">
+                <div className="th-social">
+                  <a href="https://www.facebook.com/">
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.twitter.com/">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.youtube.com/">
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/">
+                    <i className="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Navigation */}
+        <div className="sticky-wrapper">
+          <div className="container">
+            <div className="menu-area">
               <div className="menu-area-wrap">
+                {/* Mobile Logo */}
+                <div className="col-auto d-inline-block d-lg-none">
+                  <div className="header-logo">
+                    <Link to="/">
+                      <img src={seedLogo} alt="SEED Logo" />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Navigation Menu */}
                 <nav className="main-menu d-none d-lg-block">
-                  <ul className="flex gap-6 font-medium">
-                    <li><Link to="/home">Home</Link></li>
-
-                    <li className="menu-item-has-children relative group">
+                  <ul>
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li className="menu-item-has-children">
                       <Link to="#">About Us</Link>
-                      <ul className="sub-menu absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded mt-2">
-                        <li><Link to="/about/overview">Overview</Link></li>
-                        <li><Link to="/about/vision-mission">Vision & Mission</Link></li>
-                        <li><Link to="/about/registration">Registration Details</Link></li>
-                        <li><Link to="/about/team">Team & Members</Link></li>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="/about/overview">Overview</Link>
+                        </li>
+                        <li>
+                          <Link to="/about/vision-mission">Vision & Mission</Link>
+                        </li>
+                        <li>
+                          <Link to="/about/registration">Registration Details</Link>
+                        </li>
+                        <li>
+                          <Link to="/about/team">Team & Members</Link>
+                        </li>
                       </ul>
                     </li>
-
-                    <li className="menu-item-has-children relative group">
+                    <li className="menu-item-has-children">
                       <Link to="#">Programs & Activities</Link>
-                      <ul className="sub-menu absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded mt-2">
-                        <li><Link to="/programs/human-rights">Human Rights Awareness</Link></li>
-                        <li><Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link></li>
-                        <li><Link to="/programs/women-empowerment">Women Empowerment</Link></li>
-                        <li><Link to="/programs/skill-development">Skill Development</Link></li>
-                        <li><Link to="/programs/cultural">Cultural Programs</Link></li>
-                        <li><Link to="/programs/education-scst">Education for SC/ST Girls</Link></li>
-                        <li><Link to="/programs/environment">Environment Awareness</Link></li>
-                        <li><Link to="/programs/sports">Sports Development</Link></li>
-                        <li><Link to="/programs/health-camps">Health Camps</Link></li>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="/programs/human-rights">
+                            Human Rights Awareness
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/swachh-bharat">
+                            Swachh Bharat Abhiyan
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/women-empowerment">
+                            Women Empowerment
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/skill-development">
+                            Skill Development
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/cultural">Cultural Programs</Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/education-scst">
+                            Education for SC/ST Girls
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/environment">
+                            Environment Awareness
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/sports">Sports Development</Link>
+                        </li>
+                        <li>
+                          <Link to="/programs/health-camps">Health Camps</Link>
+                        </li>
                       </ul>
                     </li>
-
-                    <li><Link to="/annual">Annual Reports</Link></li>
-
-                    <li className="menu-item-has-children relative group">
+                    <li>
+                      <Link to="/annual">Annual Reports</Link>
+                    </li>
+                    <li className="menu-item-has-children">
                       <Link to="#">Gallery</Link>
-                      <ul className="sub-menu absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded mt-2">
-                        <li><Link to="/gallery/photos">Photos</Link></li>
-                        <li><Link to="/gallery/videos">Videos</Link></li>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="/gallery/photos">Photos</Link>
+                        </li>
+                        <li>
+                          <Link to="/gallery/videos">Videos</Link>
+                        </li>
                       </ul>
                     </li>
-
-                    <li><Link to="/annual">News & Events</Link></li>
-
-                    <li className="menu-item-has-children relative group">
+                    <li>
+                      <Link to="/news-events">News & Events</Link>
+                    </li>
+                    <li className="menu-item-has-children">
                       <Link to="#">Get Involved</Link>
-                      <ul className="sub-menu absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded mt-2">
-                        <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
-                        <li><Link to="/get-involved">Donate</Link></li>
-                        <li><Link to="/get-involved/partnership">Partnership</Link></li>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="/get-involved/volunteer">Volunteer</Link>
+                        </li>
+                        <li>
+                          <Link to="/get-involved">Donate</Link>
+                        </li>
+                        <li>
+                          <Link to="/get-involved/partnership">Partnership</Link>
+                        </li>
                       </ul>
                     </li>
+                
                   </ul>
                 </nav>
+
+                {/* <p className="header-notice">
+                  <img
+                    className="me-1"
+                    src="assets/img/icon/heart-icon.svg"
+                    alt="icon"
+                  />
+                  Are you ready to help them? Let’s become a volunteer...
+                </p> */}
               </div>
 
-              {/* Contact Button */}
+              {/* Buttons */}
               <div className="header-button">
-                <Link to="/contact" className="th-btn style3 d-xl-block d-none bg-[#2e8ed8] text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
+
+                {/* Contact Button */}
+                <Link id="headercontactbtn"
+                  to="/contact"
+                  className="th-btn style3 d-lg-block d-none"
+                >
                   <i className="fas fa-phone me-2"></i> Contact Us
                 </Link>
-                {/* <button type="button" className="icon-btn th-menu-toggle d-lg-none"> */}
+
+
                 <button
                   type="button"
                   className="icon-btn th-menu-toggle d-lg-none"
-                  onClick={() => setMenuOpen(true)}   // ✅ open
+                  onClick={() => setMenuOpen(true)}
                 >
                   <i className="far fa-bars"></i>
                 </button>
               </div>
-
-
             </div>
           </div>
         </div>
       </header>
-    </>
 
+      {/* Mobile Menu Drawer */}
+      {menuOpen && <SideCart onClose={() => setMenuOpen(false)} />}
+    </>
   );
 };
 

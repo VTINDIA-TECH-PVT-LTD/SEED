@@ -8,7 +8,7 @@ const Services = () => {
       id="service-sec"
     >
       {/* Left Shape */}
-      <div
+      {/* <div
         className="shape-mockup service-shape-3-1 jump d-lg-block d-none"
         data-left="3%"
         data-top="15%"
@@ -20,7 +20,7 @@ const Services = () => {
           ></div>
           <img src="assets/img/hero/hero-bg-shape2-1.png" alt="shape" />
         </div>
-      </div>
+      </div> */}
 
       {/* Right Shape */}
       <div
@@ -36,91 +36,84 @@ const Services = () => {
         <div className="row justify-content-center align-items-center">
           <div className="col-lg-7">
             <div className="title-area text-center">
-              <span className="sub-title">Our Best Services</span>
-              <h2 className="sec-title">
-                We provide this life's service to the poor.
+              <span className="sub-title">Our Mission & Vision</span>
+              <h2 id="serviceheading" className="sec-title">
+                Building a Better Future through Education and Service
               </h2>
             </div>
           </div>
         </div>
 
         <div className="row gy-30 gx-30 justify-content-center">
-          {/* Service Card 1 */}
+          {/* Service Card 1 - About */}
           <div className="col-lg-4 col-md-6">
             <div className="service-card style3">
               <div className="box-thumb">
-                <img
-                  src="assets/img/service/service_card_3_1.png"
-                  alt="icon"
-                />
+                <img style={{ height: "308px" }}  src="uploads/Aboutpic1.png" alt="About SEED" />
               </div>
               <div className="box-icon">
-                <img
-                  src="assets/img/icon/service-icon/service-card-icon1-1.svg"
-                  alt="Icon"
+                <img 
+                  src="assets/img/icon/service-icon/service-card-icon1-2.svg"
+                  alt="About Icon"
                 />
               </div>
               <div className="box-content">
                 <h3 className="box-title">
-                  <a href="about.html">Fund Poor Raised</a>
+                  <a href="about.html">About Us</a>
                 </h3>
                 <p className="box-text">
-                  Share stories and experiences from current volunteers to
-                  inspire others to join.
+                  SEED is dedicated to creating lasting change through social empowerment, 
+                  educational opportunities, and sustainable services for underprivileged communities.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Service Card 2 */}
+          {/* Service Card 2 - Mission */}
           <div className="col-lg-4 col-md-6">
             <div className="service-card style3">
               <div className="box-thumb">
-                <img
-                  src="assets/img/service/service_card_3_2.png"
-                  alt="icon"
-                />
-              </div>
-              <div className="box-icon">
-                <img
-                  src="assets/img/icon/service-icon/service-card-icon1-3.svg"
-                  alt="Icon"
-                />
-              </div>
-              <div className="box-content">
-                <h3 className="box-title">
-                  <a href="about.html">Money This Treatment</a>
-                </h3>
-                <p className="box-text">
-                  Share stories and experiences from current volunteers to
-                  inspire others to join.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Card 3 */}
-          <div className="col-lg-4 col-md-6">
-            <div className="service-card style3">
-              <div className="box-thumb">
-                <img
-                  src="assets/img/service/service_card_3_3.png"
-                  alt="icon"
-                />
+                <img src="uploads/mission.jpg" style={{ width: "409px", height: "307px" }} alt="Mission" />
               </div>
               <div className="box-icon">
                 <img
                   src="assets/img/icon/service-icon/service-card-icon1-2.svg"
-                  alt="Icon"
+                  alt="Mission Icon"
                 />
               </div>
               <div className="box-content">
                 <h3 className="box-title">
-                  <a href="about.html">Child Education Raised</a>
+                  <a href="about.html">Our Mission</a>
                 </h3>
                 <p className="box-text">
-                  Share stories and experiences from current volunteers to
-                  inspire others to join.
+                  To uplift communities by focusing on social welfare, 
+                  providing access to education, and ensuring essential 
+                  services that foster dignity and growth for all.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Card 3 - Vision */}
+          <div className="col-lg-4 col-md-6">
+            <div className="service-card style3">
+              <div className="box-thumb">
+                <img src="uploads/vision.png" style={{ width: "409px", height: "307px" }} alt="Vision" />
+              </div>
+              <div className="box-icon">
+                <img
+                  src="assets/img/icon/service-icon/service-card-icon1-2.svg"
+                  alt="Vision Icon"
+                />
+              </div>
+              <div className="box-content">
+                <h3 className="box-title">
+                  <a href="about.html">Our Vision</a>
+                </h3>
+                <p className="box-text">
+                  To build a society where every individual has access to 
+                  education, social equality, and sustainable services, 
+                  creating harmony between people and nature.
                 </p>
               </div>
             </div>

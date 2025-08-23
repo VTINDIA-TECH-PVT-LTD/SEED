@@ -55,7 +55,7 @@ export default function Footer() {
                 <h3 className="widget_title">Quick Links</h3>
                 <ul className="menu">
                   <li>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about/overview">About Us</Link>
                   </li>
                   <li>
                     <Link to="/programs">Annual Reports</Link>
@@ -96,7 +96,7 @@ export default function Footer() {
                     <div className="box-content">
                       <p className="box-text">Call us any time:</p>
                       <h4 className="box-title">
-                        <a href="tel:+919437314152">+91 9437314152</a>
+                        <a id="footertel" href="tel:+919437314152">+91 9437314152</a>
                       </h4>
                     </div>
                   </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                     <div className="box-content">
                       <p className="box-text">Email us any time:</p>
                       <h4 className="box-title">
-                        <a href="mailto:seedodisha1971@gmail.com">
+                        <a id="footermail" href="mailto:seedodisha1971@gmail.com">
                           seedodisha1971@gmail.com
                         </a>
                       </h4>
