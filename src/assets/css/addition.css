@@ -1,34 +1,5 @@
-/* 1 : InnerPage Banner CSS*/
-/* 2 : FloatingSocial CSS  */
-/* 3 : Enhanced Gallery CSS */
-
-/* InnerPage Banner CSS Start */
-.inner-banner {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 0;
-    position: relative;
-    color: #fff;
-    text-align: center;
-}
-
-.inner-banner-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    padding: 40px 20px;
-}
-
-.inner-banner h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.inner-banner .breadcrumb {
-    font-size: 16px;
-    color: #ddd;
-}
-/* InnerPage Banner CSS End */
+/* 1 : FloatingSocial CSS  */
+/* 2 : Enhanced Gallery CSS */
 
 
 /* FloatingSocial CSS Start */
