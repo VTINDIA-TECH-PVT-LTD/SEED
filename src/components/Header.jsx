@@ -8,6 +8,11 @@ import Topbar from "./Topbar";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+ const [openSubmenu, setOpenSubmenu] = useState(null); // ✅ track submenu
+
+  const toggleSubmenu = (menu) => {
+    setOpenSubmenu(openSubmenu === menu ? null : menu);
+  };
   return (
     <>
       {/* <div className="preloader">
@@ -59,7 +64,7 @@ const Header = () => {
             <ul>
               <li><Link to="/home">Home</Link></li>
 
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <Link to="#">About Us</Link>
                 <ul className="sub-menu">
                   <li><Link to="/about/overview">Overview</Link></li>
@@ -67,9 +72,46 @@ const Header = () => {
                   <li><Link to="/about/registration">Registration Details</Link></li>
                   <li><Link to="/about/team">Team & Members</Link></li>
                 </ul>
+              </li> */}
+               {/* About Us */}
+              <li
+                className={`menu-item-has-children th-item-has-children ${
+                  openSubmenu === "about" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("about");
+                  }}
+                >
+                  About Us <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className={`th-submenu ${
+                    openSubmenu === "about" ? "th-open" : ""
+                  }`}
+                  style={{
+                    display: openSubmenu === "about" ? "block" : "none",
+                  }}
+                >
+                  <li>
+                    <Link to="/about/overview">Overview</Link>
+                  </li>
+                  <li>
+                    <Link to="/about/vision-mission">Vision & Mission</Link>
+                  </li>
+                  <li>
+                    <Link to="/about/registration">Registration Details</Link>
+                  </li>
+                  <li>
+                    <Link to="/about/team">Team & Members</Link>
+                  </li>
+                </ul>
               </li>
 
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <Link to="#">Programs & Activities</Link>
                 <ul className="sub-menu">
                   <li><Link to="/programs/human-rights">Human Rights Awareness</Link></li>
@@ -82,13 +124,92 @@ const Header = () => {
                   <li><Link to="/programs/sports">Sports Development</Link></li>
                   <li><Link to="/programs/health-camps">Health Camps</Link></li>
                 </ul>
+              </li> */}
+               {/* Programs */}
+              <li
+                className={`menu-item-has-children th-item-has-children ${
+                  openSubmenu === "programs" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("programs");
+                  }}
+                >
+                  Programs & Activities <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className={`th-submenu ${
+                    openSubmenu === "programs" ? "th-open" : ""
+                  }`}
+                  style={{
+                    display: openSubmenu === "programs" ? "block" : "none",
+                  }}
+                >
+                  <li>
+                    <Link to="/programs/human-rights">Human Rights Awareness</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/women-empowerment">Women Empowerment</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/skill-development">Skill Development</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/cultural">Cultural Programs</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/education-scst">Education for SC/ST Girls</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/environment">Environment Awareness</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/sports">Sports Development</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/health-camps">Health Camps</Link>
+                  </li>
+                </ul>
               </li>
 
               <li><Link to="/annual">Annual Reports</Link></li>
 
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <Link to="#">Gallery</Link>
                 <ul className="sub-menu">
+                  <li><Link to="/gallery/photos">Photos</Link></li>
+                  <li><Link to="/gallery/videos">Videos</Link></li>
+                </ul>
+              </li> */}
+              {/* Gallery */}
+              <li
+                className={`menu-item-has-children th-item-has-children ${
+                  openSubmenu === "gallery" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("gallery");
+                  }}
+                >
+                  Gallery <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className={`th-submenu ${
+                    openSubmenu === "gallery" ? "th-open" : ""
+                  }`}
+                  style={{
+                    display: openSubmenu === "gallery" ? "block" : "none",
+                  }}
+                >
                   <li><Link to="/gallery/photos">Photos</Link></li>
                   <li><Link to="/gallery/videos">Videos</Link></li>
                 </ul>
@@ -96,9 +217,37 @@ const Header = () => {
 
               <li><Link to="/annual">News & Events</Link></li>
 
-              <li className="menu-item-has-children">
+              {/* <li className="menu-item-has-children">
                 <Link to="#">Get Involved</Link>
                 <ul className="sub-menu">
+                  <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
+                  <li><Link to="/get-involved">Donate</Link></li>
+                  <li><Link to="/get-involved/partnership">Partnership</Link></li>
+                </ul>
+              </li> */}
+              {/* Get Involved */}
+              <li
+                className={`menu-item-has-children th-item-has-children ${
+                  openSubmenu === "getinvolved" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("getinvolved");
+                  }}
+                >
+                  Get Involved <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className={`th-submenu ${
+                    openSubmenu === "getinvolved" ? "th-open" : ""
+                  }`}
+                  style={{
+                    display: openSubmenu === "getinvolved" ? "block" : "none",
+                  }}
+                >
                   <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
                   <li><Link to="/get-involved">Donate</Link></li>
                   <li><Link to="/get-involved/partnership">Partnership</Link></li>
