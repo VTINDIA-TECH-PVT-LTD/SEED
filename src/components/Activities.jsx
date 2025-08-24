@@ -1,58 +1,59 @@
 // DonationSection.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const donations = [
-    { 
-        img: "uploads/act1.png", 
-        title: "Human Rights Awareness",  
-        theme: "", 
-        description: "Support human rights initiatives to empower communities globally." 
+    {
+        img: "uploads/act1.png",
+        title: "Human Rights Awareness",
+        theme: "",
+        description: "Support human rights initiatives to empower communities globally."
     },
-    { 
-        img: "uploads/act2.jpg", 
-        title: "Swachh Bharat Abhiyan",  
-        theme: "var(--theme-color2)", 
-        description: "Promote cleanliness, hygiene, and sanitation across all communities." 
+    {
+        img: "uploads/act2.jpg",
+        title: "Swachh Bharat Abhiyan",
+        theme: "var(--theme-color2)",
+        description: "Promote cleanliness, hygiene, and sanitation across all communities."
     },
-    { 
-        img: "uploads/act7.jpeg", 
-        title: "Women Empowerment",  
-        theme: "#FF5528", 
-        description: "Empower women through education, skill development, and opportunities." 
+    {
+        img: "uploads/act7.jpeg",
+        title: "Women Empowerment",
+        theme: "#FF5528",
+        description: "Empower women through education, skill development, and opportunities."
     },
-    { 
-        img: "uploads/act8.jpeg", 
-        title: "Skill Development",  
-        theme: "#122F2A", 
-        description: "Provide training and guidance to improve employability skills." 
+    {
+        img: "uploads/act8.jpeg",
+        title: "Skill Development",
+        theme: "#122F2A",
+        description: "Provide training and guidance to improve employability skills."
     },
-    { 
-        img: "uploads/act9.jpg", 
-        title: "Cultural Programs", 
-        theme: "var(--theme-color2)", 
-        description: "Celebrate and preserve cultural heritage through community programs." 
+    {
+        img: "uploads/act9.jpg",
+        title: "Cultural Programs",
+        theme: "var(--theme-color2)",
+        description: "Celebrate and preserve cultural heritage through community programs."
     },
-    { 
-        img: "uploads/act3.png", 
-        title: "Education for SC/ST Girls",  
-        theme: "#FF5528", 
-        description: "Support education and learning opportunities for underprivileged girls." 
+    {
+        img: "uploads/act3.png",
+        title: "Education for SC/ST Girls",
+        theme: "#FF5528",
+        description: "Support education and learning opportunities for underprivileged girls."
     },
-    { 
-        img: "uploads/act4.png", 
+    {
+        img: "uploads/act4.png",
         title: "Environment Awareness",
-        theme: "", 
-        description: "Encourage sustainable living and protect nature for future generations." 
+        theme: "",
+        description: "Encourage sustainable living and protect nature for future generations."
     },
-    { 
-        img: "uploads/act6.png", 
-        title: "Health Camps",  
-        theme: "#122F2A", 
-        description: "Organize free health checkups and wellness camps for communities." 
+    {
+        img: "uploads/act6.png",
+        title: "Health Camps",
+        theme: "#122F2A",
+        description: "Organize free health checkups and wellness camps for communities."
     },
 ];
 
@@ -73,7 +74,7 @@ const DonationSection = () => {
                     <div className="col-lg-7">
                         <div className="title-area text-center">
                             <span className="sub-title">Programs & Activities</span>
-                            <h2 id="programheading" className="sec-title">Empowering Communities Through Programs</h2>
+                            <h2 id="programheading" className="sec-title">Empowering Communities Through Programs & Activities</h2>
                         </div>
                     </div>
                 </div>
@@ -93,7 +94,7 @@ const DonationSection = () => {
                             delay: 2500,
                             disableOnInteraction: false,
                         }}
-                        
+
                         breakpoints={{
                             0: { slidesPerView: 1, slidesPerGroup: 1 },
                             576: { slidesPerView: 1, slidesPerGroup: 1 },
@@ -111,14 +112,16 @@ const DonationSection = () => {
                                         <img src={item.img} alt={item.title} />
                                     </div>
                                     <h3 className="box-title">
-                                        <a href="blog-details.html">{item.title}</a>
+
+                                        <Link to="/programs/human-rights">{item.title}</Link>
                                     </h3>
+
                                     <div className="box-content">
-                                        <h4 className="subtitle">{item.description}</h4>
-                                        
-                                        <a href="blog-details.html" className="th-btn style6">
-                                            Read More <i className="fas fa-arrow-up-right ms-2"></i>
-                                        </a>
+                                        <h4 id="activitysubtitle" className="subtitle">{item.description}</h4>
+
+
+                                        <Link to="/programs/human-rights" className="th-btn style6"  id="activitiesmore">Read More <i className="fas fa-arrow-up-right ms-2"></i></Link>
+
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -133,12 +136,12 @@ const DonationSection = () => {
                     <div className="thumb">
                         <img src="assets/img/donation/donation4-btn-wrap-thumb.png" alt="img" />
                     </div>
-                    <h4 className="title">
-                        We are supporting over 10+ additional causes to aid people worldwide.
+                    <h4 className="title justify">
+                        We engage in diverse programs and activities to uplift lives and communities.
                     </h4>
-                    <a href="blog-details.html" className="th-btn">
-                        More Cause <i className="fas fa-arrow-up-right ms-2"></i>
-                    </a>
+
+                    <Link to="/gallery/photos" className="th-btn">View Details <i className="fas fa-arrow-up-right ms-2"></i></Link>
+
                 </div>
             </div>
         </section>

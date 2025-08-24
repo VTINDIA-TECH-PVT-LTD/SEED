@@ -88,13 +88,16 @@ Version: 1.0.0
 /*------------------- 1.2. Function -------------------*/
 /*------------------- 1.3. Variable-------------------*/
 :root {
-  --new-color: #606a73 ;
+  --seed-color: #606a73 ; 
+  --theme-team: #606a73 ; 
+  --no-color: #ffffff;
 
   --theme-color: #606a73 ;
   --theme-dark: #122F2A;
   --theme-color2: #aa0505;
   --theme-color3: #FF5528;
   --title-color: #577003;
+  --title2-color: #1F1F1F;
   --body-color: #797E88;
   --smoke-color: #F8F8F8;
   --smoke-color2: #F6F6F6;
@@ -124,8 +127,8 @@ Version: 1.0.0
   --icon-font: "Font Awesome 6 Pro";
   --main-container: 1290px;
   --container-gutters: 24px;
-  --section-space: 60px;
-  --section-space-mobile: 80px;
+  --section-space: 40px;
+  --section-space-mobile: 40px;
   --section-title-space: 60px;
   --ripple-ani-duration: 5s;
   --th-body-background: #ffffff;
@@ -2197,7 +2200,7 @@ textarea.is-invalid {
   line-height: 1.4;
   font-size: 16px;
   text-transform: capitalize;
-  color: var(--title-color);
+  color: var(--title2-color);
   padding-left: 18px;
 }
 .th-mobile-menu ul li a:before {
@@ -2235,7 +2238,7 @@ textarea.is-invalid {
   display: inline-block;
   text-align: center;
   background-color: var(--smoke-color);
-  color: var(--title-color);
+  color: var(--theme-color2);
   -webkit-box-shadow: 0 0 20px -8px rgba(173, 136, 88, 0.5);
           box-shadow: 0 0 20px -8px rgba(173, 136, 88, 0.5);
   border-radius: 50%;
@@ -3349,7 +3352,7 @@ hr.title-line {
 .th-social.style2 a {
   background: var(--smoke-color);
   border: 0;
-  color: var(--title-color);
+  color: var(--theme-color2);
   font-size: 18px;
 }
 .th-social.style2 a:hover {
@@ -3476,7 +3479,7 @@ hr.title-line {
   position: absolute;
   inset: 0;
   mix-blend-mode: color;
-  background: var(--theme-color2);
+  background: var(--no-color);
 }
 
 .mfp-zoom-in .mfp-content {
@@ -6387,7 +6390,8 @@ ol.wp-block-rss {
   font-weight: 600;
   font-size: 16px;
   font-family: var(--title-font);
-  color: var(--title-color);
+  /* change */
+  color: var(--title2-color);
 }
 .main-menu a:hover {
   color: var(--theme-color);
@@ -6949,7 +6953,8 @@ ol.wp-block-rss {
   margin-bottom: -30px;
 }
 .header-default .menu-top {
-  padding: 6px 0px;
+  /* change */
+  padding: 1px 0px;
 }
 .header-default .menu-top .header-notice {
   display: none;
@@ -6974,7 +6979,7 @@ ol.wp-block-rss {
   display: -ms-flexbox;
   display: flex;
   width: -webkit-fill-available;
-  background: var(--new-color);
+  background: var(--seed-color);
   padding: 0 18px 0 30px;
   border-radius: 10px;
 }
@@ -7679,10 +7684,10 @@ ol.wp-block-rss {
 /*------------------- 4.3. Footer  -------------------*/
 .footer-wrapper {
   --border-color: rgba(255, 255, 255, 0.3);
-  --body-color: #829592;
+  --body-color: #efecec;
   position: relative;
   z-index: 2;
-  background-color: var(--black-color3);
+  background-color: var(--seed-color);
   overflow: hidden;
 }
 .footer-wrapper .social-links a {
@@ -7690,6 +7695,7 @@ ol.wp-block-rss {
 }
 
 .widget-area {
+  /* changes */
   padding-top: 80px;
   padding-bottom: 40px;
 }
@@ -7738,9 +7744,9 @@ ol.wp-block-rss {
 }
 
 .copyright-wrap {
-  padding: 4.25px 0;
+  padding: 7.25px 0;
   background-size: 100% auto;
-  background-color: var(--theme-color);
+  background-color: #696f74d1;
 }
 .copyright-wrap .copyright-text {
   color: var(--white-color);
@@ -8138,8 +8144,9 @@ ol.wp-block-rss {
   z-index: 1;
 }
 .breadcumb-wrapper .breadcumb-content {
-  --space: 165px;
-  padding: calc(var(--space) + 30px) 0 var(--space);
+  /* changes */
+  --space: 124px;
+  padding: calc(var(--space) + 1px) 0 var(--space);
   position: relative;
   z-index: 1;
   text-align: center;
@@ -13097,7 +13104,8 @@ span.select2-selection.select2-selection--single:focus {
     max-width: 280px;
   }
   .img-box3 .year-counter .year-counter_number {
-    font-size: 24px;
+    /* changes */
+    font-size: 19px;
   }
 }
 @media (max-width: 991px) {
@@ -13659,7 +13667,7 @@ span.select2-selection.select2-selection--single:focus {
   /* Small devices */
 }
 .team-card .box-title a {
-  color: var(--title-color);
+  color: var(--title2-color);
 }
 .team-card .box-title a:hover {
   color: var(--theme-color);
@@ -13773,7 +13781,7 @@ span.select2-selection.select2-selection--single:focus {
           transform: scale(1.05);
 }
 .team-card:hover .team-card-content:after {
-  background: var(--theme-dark);
+  background: var(--theme-team);
   opacity: 1;
 }
 .team-card:hover .box-title a {
@@ -17449,7 +17457,8 @@ span.select2-selection.select2-selection--single:focus {
 }
 
 .feature-card {
-  padding: 30px;
+  /* changes */
+  padding: 15px;
   position: relative;
   -webkit-box-shadow: 0px 10px 30px -6px rgba(12, 12, 13, 0.12);
           box-shadow: 0px 10px 30px -6px rgba(12, 12, 13, 0.12);
@@ -17483,7 +17492,8 @@ span.select2-selection.select2-selection--single:focus {
   transition: 0.4s;
 }
 .feature-card .box-title {
-  font-size: 24px;
+  /* changes */
+  font-size: 21px;
   font-weight: 700;
   -webkit-transition: 0.4s;
   transition: 0.4s;

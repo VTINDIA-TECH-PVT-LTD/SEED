@@ -1,5 +1,6 @@
 // src/components/About.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -67,7 +68,7 @@ const AboutSection = () => {
                 <h2 id="aboutheading" className="sec-title">
                   Social, Educational & Environmental Development Center
                 </h2>
-                <p className="mt-30">
+                <p className="mt-30 justify">
                   At SEED, we are committed to empowering communities by
                   fostering sustainable growth in three key areas: social
                   welfare, education, and environmental development. Our mission
@@ -80,11 +81,11 @@ const AboutSection = () => {
               {/* Features */}
               <div className="about-feature-grid">
                 <div className="box-icon">
-                  <img src="assets/img/icon/about-icon2-1.svg" alt="icon" />
+                  <img src="/uploads/development.png" alt="icon" />
                 </div>
                 <div className="media-body">
                   <h4 className="box-title">Social Development</h4>
-                  <p className="box-text">
+                  <p className="box-text justify">
                     We work to uplift underprivileged communities through health
                     programs, women empowerment initiatives, and skill-building
                     workshops that promote equality and dignity for all.
@@ -94,11 +95,11 @@ const AboutSection = () => {
 
               <div className="about-feature-grid">
                 <div className="box-icon">
-                  <img src="assets/img/icon/about-icon2-2.svg" alt="icon" />
+                 <img src="/uploads/educational-growth.png" alt="icon" />
                 </div>
                 <div className="media-body">
                   <h4 className="box-title">Educational Growth</h4>
-                  <p className="box-text">
+                  <p className="box-text justify">
                     Our programs focus on providing quality education and
                     resources to children and youth, ensuring they have the
                     tools to build a better future for themselves and their
@@ -109,25 +110,21 @@ const AboutSection = () => {
 
               <div className="about-feature-grid">
                 <div className="box-icon">
-                  <img src="assets/img/icon/about-icon2-1.svg" alt="icon" />
+                  <img src="/uploads/environmental-protection.png" alt="icon" />
                 </div>
                 <div className="media-body">
                   <h4 className="box-title">Environmental Care</h4>
-                  <p className="box-text">
-                    We take action to protect our planet through tree
-                    plantations, clean-up drives, and spreading awareness about
-                    sustainable practices to create a healthier environment for
-                    generations to come.
+                  <p className="box-text justify">
+                    We work to protect our planet through tree plantations, clean-up drives, and promoting sustainable practices to ensure a healthier environment for future generations.
                   </p>
                 </div>
               </div>
 
               {/* Button */}
               <div className="btn-wrap mt-40">
-                <a href="about.html" className="th-btn">
-                  Learn More About SEED
-                  <i className="fas fa-arrow-up-right ms-2"></i>
-                </a>
+                
+                <Link to="/about/overview" className="th-btn">Learn More About SEED <i className="fas fa-arrow-up-right ms-2"></i></Link>
+
               </div>
             </div>
           </div>

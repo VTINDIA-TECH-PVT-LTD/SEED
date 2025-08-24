@@ -1,19 +1,167 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import seedLogo from "../assets/seedlogo.png";
-import SideCart from "./SideCart";
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-   const [openSubmenu, setOpenSubmenu] = useState(null); // ✅ track submenu
-  
-    const toggleSubmenu = (menu) => {
-      setOpenSubmenu(openSubmenu === menu ? null : menu);
-    };
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null); // ✅ track submenu
+
+  const toggleSubmenu = (menu) => {
+    setOpenSubmenu(openSubmenu === menu ? null : menu);
+  };
 
   return (
     <>
+      {/* Mobile Menu */}
+      <div className={`th-menu-wrapper ${menuOpen ? "th-body-visible" : ""}`}>
+        <div className="th-menu-area text-center">
+          {/* Close Button */}
+          <button
+            className="th-menu-toggle"
+            onClick={() => setMenuOpen(false)}
+          >
+            <i className="fal fa-times"></i>
+          </button>
 
+          {/* Mobile Logo */}
+          <div className="mobile-logo">
+            <Link to="/">
+              <img src={seedLogo} alt="SEED Logo" />
+            </Link>
+          </div>
+
+          {/* ✅ Mobile Navigation with Toggle */}
+          <div className="th-mobile-menu">
+            <ul>
+              <li>
+                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+              </li>
+
+              {/* About Us */}
+              <li
+                className={`menu-item-has-children ${
+                  openSubmenu === "about" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("about");
+                  }}
+                >
+                  About Us <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className="sub-menu"
+                  style={{
+                    display: openSubmenu === "about" ? "block" : "none",
+                  }}
+                >
+                  <li><Link to="/about/overview" onClick={() => setMenuOpen(false)}>Overview</Link></li>
+                  <li><Link to="/about/vision-mission" onClick={() => setMenuOpen(false)}>Vision & Mission</Link></li>
+                  <li><Link to="/about/registration" onClick={() => setMenuOpen(false)}>Registration Details</Link></li>
+                  <li><Link to="/about/team" onClick={() => setMenuOpen(false)}>Team & Members</Link></li>
+                </ul>
+              </li>
+
+              {/* Programs */}
+              <li
+                className={`menu-item-has-children ${
+                  openSubmenu === "programs" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("programs");
+                  }}
+                >
+                  Programs & Activities <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className="sub-menu"
+                  style={{
+                    display: openSubmenu === "programs" ? "block" : "none",
+                  }}
+                >
+                  <li><Link to="/programs/human-rights">Human Rights Awareness</Link></li>
+                  <li><Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link></li>
+                  <li><Link to="/programs/women-empowerment">Women Empowerment</Link></li>
+                  <li><Link to="/programs/skill-development">Skill Development</Link></li>
+                  <li><Link to="/programs/cultural">Cultural Programs</Link></li>
+                  <li><Link to="/programs/education-scst">Education for SC/ST Girls</Link></li>
+                  <li><Link to="/programs/environment">Environment Awareness</Link></li>
+                  <li><Link to="/programs/sports">Sports Development</Link></li>
+                  <li><Link to="/programs/health-camps">Health Camps</Link></li>
+                </ul>
+              </li>
+
+              <li><Link to="/annual" onClick={() => setMenuOpen(false)}>Annual Reports</Link></li>
+
+              {/* Gallery */}
+              <li
+                className={`menu-item-has-children ${
+                  openSubmenu === "gallery" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("gallery");
+                  }}
+                >
+                  Gallery <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className="sub-menu"
+                  style={{
+                    display: openSubmenu === "gallery" ? "block" : "none",
+                  }}
+                >
+                  <li><Link to="/gallery/photos">Photos</Link></li>
+                  <li><Link to="/gallery/videos">Videos</Link></li>
+                </ul>
+              </li>
+
+              <li><Link to="/news-events" onClick={() => setMenuOpen(false)}>News & Events</Link></li>
+
+              {/* Get Involved */}
+              <li
+                className={`menu-item-has-children ${
+                  openSubmenu === "getinvolved" ? "th-active" : ""
+                }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("getinvolved");
+                  }}
+                >
+                  Get Involved <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className="sub-menu"
+                  style={{
+                    display: openSubmenu === "getinvolved" ? "block" : "none",
+                  }}
+                >
+                  <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
+                  <li><Link to="/get-involved">Donate</Link></li>
+                  <li><Link to="/get-involved/partnership">Partnership</Link></li>
+                </ul>
+              </li>
+
+              <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Menu */}
       <header className="th-header header-default">
         {/* Top Bar */}
         <div className="menu-top">
@@ -221,7 +369,7 @@ const Header = () => {
                         </li>
                       </ul>
                     </li>
-                
+
                   </ul>
                 </nav>
 
@@ -260,8 +408,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Mobile Menu Drawer */}
-      {menuOpen && <SideCart onClose={() => setMenuOpen(false)} />}
+      
     </>
   );
 };

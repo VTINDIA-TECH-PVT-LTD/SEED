@@ -6,6 +6,17 @@ import bannerImage from "../assets/innerbanner.png";
 export default function Overview() {
   return (
     <>
+
+       <style>
+        {`
+          .widget-area {
+            padding-top: 40px;
+            padding-bottom: 0px;
+          }
+        `}
+      </style>
+
+
       <InnerPageBanner
         title="About Us"
         background={bannerImage}
@@ -20,14 +31,12 @@ export default function Overview() {
       {/* Feature 1 */}
       <div className="col-lg-3 col-md-6">
         <div className="feature-card">
-          <div className="feature-card-bg-shape">
-            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img" />
-          </div>
+          
           <div className="box-icon">
-            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon" />
+            <img src="/uploads/technology.png" alt="icon" />
           </div>
-          <h3 className="box-title">Education for All</h3>
-          <p className="box-text">
+          <h3 className="box-title" id="overviewcardtitle">Education for All</h3>
+          <p className="box-text justify">
             We work to ensure access to quality education for children and youth, empowering them for a brighter future.
           </p>
           {/* <a className="link-btn style2" href="/about">
@@ -39,14 +48,12 @@ export default function Overview() {
       {/* Feature 2 */}
       <div className="col-lg-3 col-md-6">
         <div className="feature-card">
-          <div className="feature-card-bg-shape">
-            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img" />
-          </div>
+          
           <div className="box-icon">
-            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon" />
+            <img src="/uploads/healthcare.png" alt="icon" />
           </div>
           <h3 className="box-title">Health & Nutrition</h3>
-          <p className="box-text">
+          <p className="box-text justify">
             Providing healthcare support, awareness camps, and nutrition programs for underprivileged communities.
           </p>
           {/* <a className="link-btn style2" href="/about">
@@ -58,14 +65,12 @@ export default function Overview() {
       {/* Feature 3 */}
       <div className="col-lg-3 col-md-6">
         <div className="feature-card">
-          <div className="feature-card-bg-shape">
-            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img" />
-          </div>
+          
           <div className="box-icon">
-            <img src="assets/img/icon/feature-icon1-2.svg" alt="icon" />
+            <img src="/uploads/woman.png" alt="icon" />
           </div>
           <h3 className="box-title">Women Empowerment</h3>
-          <p className="box-text">
+          <p className="box-text justify">
             Empowering women through skill development, self-help groups, and leadership opportunities.
           </p>
           {/* <a className="link-btn style2" href="/about">
@@ -77,14 +82,12 @@ export default function Overview() {
       {/* Feature 4 */}
       <div className="col-lg-3 col-md-6">
         <div className="feature-card">
-          <div className="feature-card-bg-shape">
-            <img src="assets/img/shape/feature-card-bg-shape1-1.png" alt="img" />
-          </div>
+          
           <div className="box-icon">
-            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon" />
+            <img src="/uploads/mother-earth-day.png" alt="icon" />
           </div>
           <h3 className="box-title">Environment Protection</h3>
-          <p className="box-text" >
+          <p className="box-text justify">
             Promoting sustainability through tree plantation, clean-up drives, and climate awareness programs.
           </p>
           {/* <a className="link-btn style2" href="/about">
@@ -107,7 +110,7 @@ export default function Overview() {
           data-top="10%"
           data-right="5%"
         >
-          <img src="assets/img/shape/heart-shape1.png" alt="shape" />
+          <img src="/assets/img/shape/heart-shape1.png" alt="shape" />
         </div>
 
         <div
@@ -118,9 +121,9 @@ export default function Overview() {
           <div className="color-masking2">
             <div
               className="masking-src"
-              data-mask-src="assets/img/shape/about_shape3_1.png"
+              data-mask-src="/assets/img/shape/about_shape3_1.png"
             ></div>
-            <img src="assets/img/shape/about_shape3_1.png" alt="img" />
+            <img src="/assets/img/shape/about_shape3_1.png" alt="img" />
           </div>
         </div>
 
@@ -130,28 +133,25 @@ export default function Overview() {
             <div className="col-xl-6">
               <div className="img-box3">
                 <div className="img1">
-                  <img src="assets/img/normal/about_3_1.png" alt="About" />
+                  <img src="/uploads/about2.jpg" alt="About" />
                 </div>
                 <div className="img2 jump">
-                  <img src="assets/img/normal/about_3_2.png" alt="img" />
+                  <img src="/uploads/about1.png" alt="img" />
                 </div>
                 <div className="about-shape3-1 jump-reverse">
                   <div className="color-masking2">
                     <div
                       className="masking-src"
-                      data-mask-src="assets/img/shape/about_shape1_1.png"
+                      data-mask-src="/assets/img/shape/about_shape1_1.png"
                     ></div>
-                    <img src="assets/img/shape/about_shape1_1.png" alt="img" />
+                    <img src="/assets/img/shape/about_shape1_1.png" alt="img" />
                   </div>
                 </div>
                 <div className="year-counter movingX">
                   <div className="year-counter_number">
-                    <span className="counter-number">30+</span> Years Serving
-                    Communities
+                    <span className="counter-number justify">SEED</span> Serving Society Through Education and Development
                   </div>
-                  <Link className="link-btn style2" to="/contact">
-                    Become a Volunteer
-                  </Link>
+                 
                 </div>
               </div>
             </div>
@@ -165,12 +165,12 @@ export default function Overview() {
                 <h2 id="overviewheading" className="sec-title">
                   Empowering Lives Through Education, Equality & Environment
                 </h2>
-                <p>
+                <p className="justify">
                   SEED (Social, Educational and Environmental Development Centre) is committed to building an inclusive society where education, equality, and sustainability thrive. We work tirelessly to uplift marginalized communities, protect the environment, and empower individuals through social and educational initiatives.
                 </p>
               </div>
               <div className="about-wrap3">
-                <p className="mb-30">
+                <p className="mb-30 justify">
                   From grassroots programs to large-scale awareness campaigns,
                   SEED focuses on creating lasting impact. We believe every
                   individual deserves access to education, health, and a clean
@@ -178,12 +178,12 @@ export default function Overview() {
                 </p>
                 <div className="about-feature-grid">
                   <div className="box-icon">
-                   <img src="https://html.themeholy.com/donat/demo/assets/img/icon/about-icon3-1.svg" alt="icon" />
+                   <img src="/uploads/success.png" alt="icon" />
                   </div>
                   <div className="media-body">
-                    <h4 className="box-title">Our Mission</h4>
-                    <p className="box-text">
-                      To empower communities through social, educational, and environmental initiatives that foster equality, sustainability, and holistic development.
+                    <h4 className="box-title">Our Success</h4>
+                    <p className="box-text justify">
+                    Our success lies in empowering communities through education, social welfare, environmental awareness, and sustainable development initiatives.
                     </p>
                   </div>
                 </div>
