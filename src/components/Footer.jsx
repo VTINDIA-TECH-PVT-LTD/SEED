@@ -1,4 +1,6 @@
 import React from "react";
+import { FaFacebookF, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { SiX } from "react-icons/si";
 import { Link } from "react-router-dom";
 import seedLogo from "../assets/seedlogo.png";
 
@@ -113,12 +115,22 @@ export default function Footer() {
                     </div>
                   </div>
 
-                  <div className="th-social style2">
-                    <a href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                    <a href="https://www.twitter.com/"><i className="fab fa-twitter"></i></a>
-                    <a href="https://www.youtube.com/"><i className="fab fa-youtube"></i></a>
-                    <a href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a>
-                  </div>
+              <div className="th-social style2">
+  <a href="https://facebook.com" target="_blank" rel="noreferrer" className="facebook">
+    <FaFacebookF />
+  </a>
+  <a href="https://wa.me/919437314152" target="_blank" rel="noreferrer" className="whatsapp">
+    <FaWhatsapp />
+  </a>
+  <a href="https://twitter.com/yourhandle" target="_blank" rel="noreferrer" className="x">
+    <SiX />
+  </a>
+  <a href="https://youtube.com" target="_blank" rel="noreferrer" className="youtube">
+    <FaYoutube />
+  </a>
+</div>
+
+
                 </div>
               </div>
             </div>

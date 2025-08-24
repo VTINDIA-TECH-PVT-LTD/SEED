@@ -1,12 +1,10 @@
-
-
 /* Custom CSS */
 
 /*Prevent Text Selection*/
-/*body {*/
-/*    user-select: none; */
-/*    -webkit-user-drag: none; */
-/*}*/
+/* body {
+   user-select: none; 
+   -webkit-user-drag: none; 
+} */
 
 /* Capital Font */
 /* #capital{
@@ -16,165 +14,226 @@
 
 /* Header Part Start :- */
 
-
-
-/* Header Part End : */
-
-
- /* Footer Part Start :- */
- #footertext{
-    text-align:justify;
- }
-    
-/* Footer Part End : */
-
-
- /* Body Part Start : */
-   
-/* Body Part End : */
-
-
-
- #hide{
-        display:none;
-    }
-
-#bannertitle1{
-    font-size:50px;
+#headeraddress {
+    font-size: 15px;
 }
 
-#footertel{
-    font-size:16px;
+#headertel {
+    font-size: 14px;
 }
 
-#footermail{
-    font-size:16px;
+#headeremail {
+    font-size: 13px;
 }
 
-
-#testimonialheading{
-    font-size:45px;
-}
-
-#programheading{
-    font-size:45px;
-}
-
-#teamheading{
-    font-size:45px;
-}
-
-#serviceheading{
-    font-size:42px;
-}
-
-#aboutheading{
-    font-size:31px;
-}
-
-#overviewheading{
-    font-size:33px;
-}
-
-#headeraddress{
-    font-size:15px;
-}
-
-#headertel{
-    font-size:14px;
-}
-
-#headeremail{
-    font-size:13px;
-}
-
-#headercontactbtn{
+#headercontactbtn {
     margin-left: 20px;
 }
 
 
 
-.justify{
-    text-align:justify;
+
+/* Header Part End : */
+
+
+/* Footer Part Start :- */
+#footertext {
+    text-align: justify;
 }
+
+#footertel {
+    font-size: 16px;
+}
+
+#footermail {
+    font-size: 16px;
+}
+
+/* Footer Part End : */
+
+
+/* Body Part Start : */
+
+#bannertitle1 {
+    font-size: 45px;
+}
+
+#aboutheading {
+    font-size: 31px;
+}
+
+#serviceheading {
+    font-size: 31px;
+}
+
+#teamheading {
+    font-size: 31px;
+}
+
+
+#programheading {
+    font-size: 31px;
+}
+
+#testimonialheading {
+    font-size: 31px;
+}
+
+#overviewheading {
+    font-size: 33px;
+}
+
+#innerbannertitle {
+    font-size: 50px;
+}
+
+#activitysubtitle {
+    color:#1F1F1F;
+}
+
+#activitiesmore {
+    background:#606a73;
+}
+
+
+/* Body Part End : */
+
+
+
+#hide {
+    display: none;
+}
+
+.justify {
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 /* ===========================[Responsive start]================================= */
 
-/* Laptop (15.6 inch) */
-@media only screen and (min-width : 1400px){
+/* Laptop (15.6 inch) 💻💻 */
+@media only screen and (min-width : 1400px) {
 
     /* Header Part Start : */
-   
+
     /* Header Part End : */
 
 
     /* Footer Part Start :- */
-    
+
     /* Footer Part End : */
 
 
-     /* Body Part Start : */
-   
+    /* Body Part Start : */
+
     /* Body Part End : */
 }
 
-/* Laptop (14 inch) */
-@media only screen and (min-width : 1200px){
+/* Laptop (14 inch) 💻 */
+@media only screen and (min-width : 1200px) {
 
     /* Header Part Start : */
-    #setnav{
+    #setnav {
         max-width: 1250px !important;
     }
-    
-   
+
+
     /* Header Part End : */
 
     /* Footer Part Start :- */
-    
+
     /* Footer Part End : */
-    
+
     /* Body Part Start : */
-   
+
     /* Body Part End : */
-    
-   
+
+
 }
 
 
 /* Mobile View Not Included */
-@media only screen and (min-width : 768px){
+@media only screen and (min-width : 768px) {
 
     /* Header Part Start : */
-   
+
     /* Header Part End : */
 
 
     /* Footer Part Start :- */
-    
+
     /* Footer Part End : */
-    
-     /* Body Part Start : */
-   
+
+    /* Body Part Start : */
+
     /* Body Part End : */
 
 }
 
-/* Mobile */
-@media only screen and (max-width : 768px){
+/* Mobile View 📱📱📱*/
+@media only screen and (max-width : 768px) {
 
     /* Header Part Start : */
-   
+    .header-default .menu-area .menu-area-wrap {
+
+        background: #FFF !important;
+
+    }
+
     /* Header Part End : */
 
 
     /* Footer Part Start :- */
-    
+
     /* Footer Part End : */
-    
-     /* Body Part Start : */
-   
+
+    /* Body Part Start : */
+
+    #bannertitle1 {
+    font-size: 29px;
+}
+
+#aboutheading {
+    font-size: 22px;
+}
+
+#serviceheading {
+    font-size: 24px;
+}
+
+#teamheading {
+    font-size: 24px;
+}
+
+
+#programheading {
+    font-size: 24px;
+}
+
+#testimonialheading {
+    font-size: 24px;
+}
+
+#overviewheading {
+    font-size: 23px;
+}
+
+#about-sec{
+    padding-top: 0px;
+}
+
     /* Body Part End : */
 
 }
@@ -186,34 +245,21 @@
 
 /* Laptop (15.6 inch) */
 /* Large screens (min-width: 1400px) */
-@media only screen and (min-width : 1400px){
-
-    
-}
+@media only screen and (min-width : 1400px) {}
 
 
 /* Laptop (14 inch) */
 /* Medium screens (min-width: 1024px and max-width: 1399px) */
-@media only screen and (min-width: 1024px) and (max-width: 1399px) {
-   
-}
+@media only screen and (min-width: 1024px) and (max-width: 1399px) {}
 
 
 /* Small screens (min-width: 768px and max-width: 1023px) */
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-
-   
-}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {}
 
 
 /* Mobile */
 /* Extra small screens (max-width: 767px) */
-@media only screen and (max-width: 767px) {
-
-    
-}
+@media only screen and (max-width: 767px) {}
 
 
 /* ===========================[Responsive end]================================= */
-
-

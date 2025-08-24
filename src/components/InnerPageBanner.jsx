@@ -12,7 +12,7 @@ const InnerPageBanner = ({ title, background, breadcrumb }) => {
     >
       <div className="container">
         <div className="breadcumb-content">
-          <h1 className="breadcumb-title">{title}</h1>
+          <h1 className="breadcumb-title" id="innerbannertitle">{title}</h1>
           {breadcrumb && (
             <ul className="breadcumb-menu">
               <li>

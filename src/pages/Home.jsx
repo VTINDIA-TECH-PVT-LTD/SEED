@@ -9,11 +9,22 @@ import Services from "../components/Services";
 import TeamSection from "../components/TeamSection";
 import Activities from "../components/Activities";
 import Testimonials from "../components/Testimonials";
+import Counter from "../components/Counter";
+
 
 
 export default function Home() {
   return (
     <>
+
+      <style>
+        {`
+          .widget-area {
+            padding-top: 40px;
+            padding-bottom: 0px;
+          }
+        `}
+      </style>
 
       <Banner />
 
@@ -26,6 +37,8 @@ export default function Home() {
       <Activities />
 
       <Testimonials />
+
+      <Counter />
 
 
     </>

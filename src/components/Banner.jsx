@@ -10,7 +10,7 @@ const slides = [
     subtitle: "Empowering Communities",
     title1: "Together for a Better",
     title2: "Social & Educational Future",
-    text: "Join SEED in creating opportunities for education, empowerment, and sustainable development.",
+    text: "Join SEED to create opportunities for education, empowerment, and sustainability.",
     bgImage: "/uploads/banner.jpg",
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     subtitle: "Your Support Matters",
     title1: "Education, Equality,",
     title2: "and Empowerment",
-    text: "Contribute to SEED’s mission to uplift lives through education, social change, and environmental action.",
+    text: "Support SEED’s mission to uplift lives through education, social change, and sustainability.",
     bgImage: "uploads/banner3.jpg",
   },
 ];

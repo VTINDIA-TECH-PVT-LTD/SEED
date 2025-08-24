@@ -1,5 +1,6 @@
 // src/components/Services.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return (
@@ -59,9 +60,9 @@ const Services = () => {
               </div>
               <div className="box-content">
                 <h3 className="box-title">
-                  <a href="about.html">About Us</a>
+                   <Link to="/about/overview">About Us </Link>
                 </h3>
-                <p className="box-text">
+                <p className="box-text justify">
                   SEED is dedicated to creating lasting change through social empowerment, 
                   educational opportunities, and sustainable services for underprivileged communities.
                 </p>
@@ -76,16 +77,14 @@ const Services = () => {
                 <img src="uploads/mission.jpg" style={{ width: "409px", height: "307px" }} alt="Mission" />
               </div>
               <div className="box-icon">
-                <img
-                  src="assets/img/icon/service-icon/service-card-icon1-2.svg"
-                  alt="Mission Icon"
-                />
+                 <img src="/uploads/missionicon.png" alt="Mission Icon" />
               </div>
               <div className="box-content">
                 <h3 className="box-title">
-                  <a href="about.html">Our Mission</a>
+                  
+                  <Link to="/about/vision-mission">Our Mission</Link>
                 </h3>
-                <p className="box-text">
+                <p className="box-text justify">
                   To uplift communities by focusing on social welfare, 
                   providing access to education, and ensuring essential 
                   services that foster dignity and growth for all.
@@ -101,16 +100,13 @@ const Services = () => {
                 <img src="uploads/vision.png" style={{ width: "409px", height: "307px" }} alt="Vision" />
               </div>
               <div className="box-icon">
-                <img
-                  src="assets/img/icon/service-icon/service-card-icon1-2.svg"
-                  alt="Vision Icon"
-                />
+               <img src="/uploads/visionicon.png" alt="Vision Icon" />
               </div>
               <div className="box-content">
                 <h3 className="box-title">
-                  <a href="about.html">Our Vision</a>
+                   <Link to="/about/vision-mission">Our Vision</Link>
                 </h3>
-                <p className="box-text">
+                <p className="box-text justify">
                   To build a society where every individual has access to 
                   education, social equality, and sustainable services, 
                   creating harmony between people and nature.

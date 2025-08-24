@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { SiX } from "react-icons/si"; // For X (Twitter)
 
 // Import Swiper styles
 import "swiper/css";
@@ -28,7 +31,7 @@ const TeamSection = () => {
         {/* Slider */}
         <div className="slider-area">
           <Swiper
-            dir="rtl" // 👈 important
+            dir="rtl"
             modules={[Navigation, Autoplay]}
             navigation={{
               nextEl: ".team-next",
@@ -37,7 +40,7 @@ const TeamSection = () => {
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
-              reverseDirection: true, // 👈 make autoplay move RTL
+              reverseDirection: true,
             }}
             breakpoints={{
               0: { slidesPerView: 1 },
@@ -49,167 +52,50 @@ const TeamSection = () => {
             spaceBetween={30}
             className="th-slider has-shadow team-slider1"
           >
-            {/* Slide 1 */}
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
+            {[...Array(6)].map((_, index) => (
+              <SwiperSlide key={index}>
+                <div className="th-team team-card">
+                  <div className="img-wrap">
+                    <div className="team-img">
+                      <img src="uploads/noimage.jpg" alt="Team" />
+                    </div>
+                    <div className="team-social-hover">
+                      <a href="#" className="team-social-hover_btn">
+                        <i className="far fa-plus"></i>
+                      </a>
+                      <div className="th-social">
+                        <a target="_blank" rel="noreferrer" href="https://x.com">
+                          <SiX />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://facebook.com">
+                          <FaFacebookF />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://instagram.com">
+                          <FaInstagram />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://wa.me/919437314152">
+                          <FaWhatsapp />
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 2 */}
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
-                    </div>
+                  <div className="team-card-content">
+                    <h3 className="box-title">
+                      <Link to="/about/team">Name</Link>
+                    </h3>
+                    <span className="team-desig">Designation</span>
                   </div>
                 </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 3 */}
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            {/* Slide 4 */}
-            <SwiperSlide>
-              <div className="th-team team-card">
-                <div className="img-wrap">
-                  <div className="team-img">
-                    <img src="uploads/noimage.jpg" alt="Team" />
-                  </div>
-                  <div className="team-social-hover">
-                    <a href="#" className="team-social-hover_btn">
-                      <i className="far fa-plus"></i>
-                    </a>
-                    <div className="th-social">
-                      <a target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
-                      <a target="_blank" href="https://facebook.com/"><i className="fab fa-facebook-f"></i></a>
-                      <a target="_blank" href="https://instagram.com/"><i className="fab fa-instagram"></i></a>
-                      <a target="_blank" href="https://behance.com/"><i className="fab fa-behance"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div className="team-card-content">
-                  <h3 className="box-title"><a href="team-details.html">Name</a></h3>
-                  <span className="team-desig">Desingnation</span>
-                </div>
-              </div>
-            </SwiperSlide>
+              </SwiperSlide>
+            ))}
           </Swiper>
 
-          {/* Navigation buttons (fixed for RTL) */}
+          {/* Navigation buttons */}
           <button className="slider-arrow slider-prev team-prev">
-            <i className="far fa-arrow-left"></i> {/* Prev */}
+            <i className="far fa-arrow-left"></i>
           </button>
           <button className="slider-arrow slider-next team-next">
-            <i className="far fa-arrow-right"></i> {/* Next */}
+            <i className="far fa-arrow-right"></i>
           </button>
         </div>
       </div>

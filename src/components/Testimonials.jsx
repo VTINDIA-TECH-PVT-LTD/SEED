@@ -98,7 +98,7 @@ const Testimonials = () => {
                       <span className="testi-card_desig">{item.role}</span>
                     </div>
                   </div>
-                  <p className="testi-card_text">“{item.text}”</p>
+                  <p className="testi-card_text justify">“{item.text}”</p>
                 </div>
               </SwiperSlide>
             ))}
