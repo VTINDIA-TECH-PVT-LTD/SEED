@@ -30,6 +30,7 @@ const AboutSection = () => {
                 className="img3 moving"
                 data-mask-src="assets/img/normal/about_2_3-mask.png"
               >
+
                 <img
 
                   data-mask-src="assets/img/normal/about_2_3-mask.png"
