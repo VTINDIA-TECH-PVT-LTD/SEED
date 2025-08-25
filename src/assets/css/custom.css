@@ -92,7 +92,7 @@
 }
 
 #activitiesmore {
-    background:#606a73;
+    background:#4fad0a;
 }
 
 

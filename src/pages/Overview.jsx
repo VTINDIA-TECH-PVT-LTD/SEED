@@ -7,18 +7,8 @@ export default function Overview() {
   return (
     <>
 
-       <style>
-        {`
-          .widget-area {
-            padding-top: 40px;
-            padding-bottom: 0px;
-          }
-        `}
-      </style>
-
-
       <InnerPageBanner
-        title="About Us"
+        title="Overview"
         background={bannerImage}
         breadcrumb="About Us"
       />

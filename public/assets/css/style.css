@@ -97,7 +97,7 @@ Version: 1.0.0
   --theme-dark: #122F2A;
   --theme-color2: #aa0505;
   --theme-color3: #FF5528;
-  --title-color: #577003;
+  --title-color: #1F1F1F;
   --title2-color: #1F1F1F;
   --body-color: #797E88;
   --smoke-color: #F8F8F8;
@@ -554,7 +554,7 @@ p.has-drop-cap {
   text-align: center;
   vertical-align: top;
   width: 100%;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
 
 .wp-block-columns {
@@ -8897,8 +8897,8 @@ ol.wp-block-rss {
 
 .widget-area {
   /* changes */
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 0px;
 }
 
 .sticky-footer {
