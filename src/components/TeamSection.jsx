@@ -18,7 +18,7 @@ const TeamSection = () => {
         data-top="0%"
         data-right="3%"
       >
-        <img src="assets/img/shape/hand-group-shape1.png" alt="img" />
+        <img src="assets/img/shape/Group 1.png" alt="img" />
       </div>
 
       <div className="container">

@@ -7,8 +7,16 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Overview from "./pages/Overview";
+
 import Photos from './pages/Photos';
 import Videos from './pages/Videos';
+
+import Vision_mission from "./pages/Vision_mission";
+import Registration from "./pages/Registration";
+import Team from "./pages/Team";
+import Contact from "./pages/Contact";
+
+
 
 
 function App() {
@@ -20,9 +28,17 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about/overview" element={<Overview />} />
 
+
          <Route path="/gallery/photos" element={<Photos />} />
          <Route path="/gallery/videos" element={<Videos />} />
+
+        <Route path="/about/vision-mission" element={<Vision_mission />} />
+        <Route path="/about/registration" element={<Registration />} />
+        <Route path="/about/team" element={<Team />} />
+
         
+
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       <FloatingSocials />

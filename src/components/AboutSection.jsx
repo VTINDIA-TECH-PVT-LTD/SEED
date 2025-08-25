@@ -1,4 +1,4 @@
-// src/components/About.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,13 @@ const AboutSection = () => {
                 className="img3 moving"
                 data-mask-src="assets/img/normal/about_2_3-mask.png"
               >
-                <img
+
                   data-mask-src="assets/img/normal/about_2_3-mask.png"
                   src="uploads/Aboutpic2.png" style={{ width: "357px", height: "231px" }}
+
+                  data-mask-src="/assets/img/normal/about_2_3-mask.png"
+                  src="uploads/Aboutpic2.png" style={{ width: "356px", height: "230px" }}
+
                   alt="About"
                 />
               </div>
@@ -45,7 +49,7 @@ const AboutSection = () => {
                     className="masking-src"
                     data-mask-src="assets/img/shape/about_shape2_1.png"
                   ></div> */}
-                  <img src="assets/img/shape/about_shape2_1.png" alt="img" />
+                  <img src="assets/img/shape/Mask group.png" alt="img" />
                 </div>
               </div>
               <div className="about-shape2-2 jump-reverse">
