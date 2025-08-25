@@ -31,6 +31,8 @@ const AboutSection = () => {
                 data-mask-src="assets/img/normal/about_2_3-mask.png"
               >
 
+                <img
+
                   data-mask-src="assets/img/normal/about_2_3-mask.png"
                   src="uploads/Aboutpic2.png" style={{ width: "357px", height: "231px" }}
 
