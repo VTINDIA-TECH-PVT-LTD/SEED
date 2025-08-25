@@ -12,19 +12,9 @@ import Testimonials from "../components/Testimonials";
 import Counter from "../components/Counter";
 
 
-
 export default function Home() {
   return (
     <>
-
-      <style>
-        {`
-          .widget-area {
-            padding-top: 40px;
-            padding-bottom: 0px;
-          }
-        `}
-      </style>
 
       <Banner />
 

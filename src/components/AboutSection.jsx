@@ -25,16 +25,18 @@ const AboutSection = () => {
               <div className="img2 jump">
                 <img src="uploads/Aboutpic1.png" alt="About" />
               </div>
+
               <div
                 className="img3 moving"
-                data-mask-src="uploads/Aboutpic1.png"
+                data-mask-src="assets/img/normal/about_2_3-mask.png"
               >
                 <img
                   data-mask-src="assets/img/normal/about_2_3-mask.png"
-                  src="uploads/Aboutpic2.png" style={{ width: "356px", height: "230px" }}
+                  src="uploads/Aboutpic2.png" style={{ width: "357px", height: "231px" }}
                   alt="About"
                 />
               </div>
+
 
               {/* Decorative Shapes */}
               <div className="about-shape2-1 jump">
@@ -95,7 +97,7 @@ const AboutSection = () => {
 
               <div className="about-feature-grid">
                 <div className="box-icon">
-                 <img src="/uploads/educational-growth.png" alt="icon" />
+                  <img src="/uploads/educational-growth.png" alt="icon" />
                 </div>
                 <div className="media-body">
                   <h4 className="box-title">Educational Growth</h4>
@@ -122,7 +124,7 @@ const AboutSection = () => {
 
               {/* Button */}
               <div className="btn-wrap mt-40">
-                
+
                 <Link to="/about/overview" className="th-btn">Learn More About SEED <i className="fas fa-arrow-up-right ms-2"></i></Link>
 
               </div>

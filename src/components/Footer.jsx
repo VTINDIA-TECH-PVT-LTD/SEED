@@ -60,10 +60,10 @@ export default function Footer() {
                     <Link to="/about/overview">About Us</Link>
                   </li>
                   <li>
-                    <Link to="/programs">Annual Reports</Link>
+                    <Link to="/annual">Annual Reports</Link>
                   </li>
                   <li>
-                    <Link to="/gallery">Gallery</Link>
+                    <Link to="/gallery/photos">Photo Gallery</Link>
                   </li>
                   <li>
                     <Link to="/news-events">News & Events</Link>

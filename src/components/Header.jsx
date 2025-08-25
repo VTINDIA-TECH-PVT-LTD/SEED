@@ -39,9 +39,8 @@ const Header = () => {
 
               {/* About Us */}
               <li
-                className={`menu-item-has-children ${
-                  openSubmenu === "about" ? "th-active" : ""
-                }`}
+                className={`menu-item-has-children ${openSubmenu === "about" ? "th-active" : ""
+                  }`}
               >
                 <a
                   href="#"
@@ -67,9 +66,8 @@ const Header = () => {
 
               {/* Programs */}
               <li
-                className={`menu-item-has-children ${
-                  openSubmenu === "programs" ? "th-active" : ""
-                }`}
+                className={`menu-item-has-children ${openSubmenu === "programs" ? "th-active" : ""
+                  }`}
               >
                 <a
                   href="#"
@@ -102,9 +100,8 @@ const Header = () => {
 
               {/* Gallery */}
               <li
-                className={`menu-item-has-children ${
-                  openSubmenu === "gallery" ? "th-active" : ""
-                }`}
+                className={`menu-item-has-children ${openSubmenu === "gallery" ? "th-active" : ""
+                  }`}
               >
                 <a
                   href="#"
@@ -130,9 +127,8 @@ const Header = () => {
 
               {/* Get Involved */}
               <li
-                className={`menu-item-has-children ${
-                  openSubmenu === "getinvolved" ? "th-active" : ""
-                }`}
+                className={`menu-item-has-children ${openSubmenu === "getinvolved" ? "th-active" : ""
+                  }`}
               >
                 <a
                   href="#"
@@ -236,23 +232,6 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Social Icons */}
-              <div className="col-auto header-social-col">
-                <div className="th-social">
-                  <a href="https://www.facebook.com/">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="https://www.twitter.com/">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="https://www.youtube.com/">
-                    <i className="fab fa-youtube"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -408,7 +387,7 @@ const Header = () => {
         </div>
       </header>
 
-      
+
     </>
   );
 };
