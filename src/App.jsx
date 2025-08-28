@@ -9,12 +9,14 @@ import Home from "./pages/Home";
 import Overview from "./pages/Overview";
 
 import Photos from './pages/Photos';
-import Videos from './pages/Videos';
+import VideoGallery from './pages/VideoGallery';
 
 import Vision_mission from "./pages/Vision_mission";
 import Registration from "./pages/Registration";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
+import Annual from "./pages/Annual";
+import Audit from "./pages/Audit";
 
 
 
@@ -31,11 +33,13 @@ function App() {
 
 
          <Route path="/gallery/photos" element={<Photos />} />
-         <Route path="/gallery/videos" element={<Videos />} />
+         <Route path="/gallery/videogallery" element={<VideoGallery />} />
 
         <Route path="/about/vision-mission" element={<Vision_mission />} />
         <Route path="/about/registration" element={<Registration />} />
         <Route path="/about/team" element={<Team />} />
+        <Route path="/reports/annual" element={<Annual />} />
+        <Route path="/reports/audit" element={<Audit />} />
 
         
 

@@ -32,7 +32,7 @@ const slides = [
 
 const Banner = () => {
   return (
-    <div className="th-hero-wrapper hero-4" id="hero" style={{ height: "600px" }}>
+    <div className="th-hero-wrapper hero-4" id="hero" >
       <Swiper
         effect="fade"
         loop={true}
