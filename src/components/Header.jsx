@@ -96,7 +96,30 @@ const Header = () => {
                 </ul>
               </li>
 
-              <li><Link to="/annual" onClick={() => setMenuOpen(false)}>Annual Reports</Link></li>
+              <li
+                className={`menu-item-has-children ${openSubmenu === "reports" ? "th-active" : ""
+                  }`}
+              >
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleSubmenu("reports");
+                  }}
+                >
+                  Reports <span className="th-mean-expand"></span>
+                </a>
+                <ul
+                  className="sub-menu"
+                  style={{
+                    display: openSubmenu === "reports" ? "block" : "none",
+                  }}
+                >
+                  <li><Link to="/reports/annual">Annual</Link></li>
+                  <li><Link to="/reports/audit">Audit</Link></li>
+                </ul>
+              </li>
+
 
               {/* Gallery */}
               <li
@@ -119,7 +142,7 @@ const Header = () => {
                   }}
                 >
                   <li><Link to="/gallery/photos">Photos</Link></li>
-                  <li><Link to="/gallery/videos">Videos</Link></li>
+                  <li><Link to="/gallery/videogallery">Videos</Link></li>
                 </ul>
               </li>
 
@@ -146,7 +169,7 @@ const Header = () => {
                   }}
                 >
                   <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
-                  <li><Link to="/get-involved">Donate</Link></li>
+
                   <li><Link to="/get-involved/partnership">Partnership</Link></li>
                 </ul>
               </li>
@@ -254,10 +277,10 @@ const Header = () => {
                 <nav className="main-menu d-none d-lg-block">
                   <ul>
                     <li>
-                      <Link to="/">Home</Link>
+                      <Link to="/" className="menubaradjust">Home</Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#">About Us</Link>
+                      <Link to="#" className="menubaradjust">About Us</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/about/overview">Overview</Link>
@@ -274,7 +297,7 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#">Programs & Activities</Link>
+                      <Link to="#" className="menubaradjust">Programs & Activities</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/programs/human-rights">
@@ -317,38 +340,45 @@ const Header = () => {
                         </li>
                       </ul>
                     </li>
-                    <li>
-                      <Link to="/annual">Annual Reports</Link>
-                    </li>
+
                     <li className="menu-item-has-children">
-                      <Link to="#">Gallery</Link>
+                      <Link to="#" className="menubaradjust">Reports </Link>
                       <ul className="sub-menu">
-                        <li>
-                          <Link to="/gallery/photos">Photos</Link>
-                        </li>
-                        <li>
-                          <Link to="/gallery/videos">Videos</Link>
-                        </li>
+                        <li><Link to="/reports/annual">Annual Reports</Link></li>
+                        <li><Link to="/reports/audit">Audit Reports</Link></li>
                       </ul>
                     </li>
-                    <li>
-                      <Link to="/news-events">News & Events</Link>
-                    </li>
+
+
                     <li className="menu-item-has-children">
-                      <Link to="#">Get Involved</Link>
+                      <Link to="#" className="menubaradjust">Get Involved</Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/get-involved/volunteer">Volunteer</Link>
                         </li>
-                        <li>
-                          <Link to="/get-involved">Donate</Link>
-                        </li>
+
                         <li>
                           <Link to="/get-involved/partnership">Partnership</Link>
                         </li>
                       </ul>
                     </li>
 
+                    <li className="menu-item-has-children">
+                      <Link to="#" className="menubaradjust">Gallery</Link>
+                      <ul className="sub-menu">
+                        <li>
+                          <Link to="/gallery/photos">Photos</Link>
+                        </li>
+                        <li>
+                          <Link to="/gallery/videogallery">Videos</Link>
+                        </li>
+                      </ul>
+                    </li>
+
+
+                    <li>
+                      <Link to="/contact" className="menubaradjust">Contact</Link>
+                    </li>
                   </ul>
                 </nav>
 
@@ -367,10 +397,10 @@ const Header = () => {
 
                 {/* Contact Button */}
                 <Link id="headercontactbtn"
-                  to="/contact"
+                  to="/donate"
                   className="th-btn style3 d-lg-block d-none"
                 >
-                  <i className="fas fa-phone me-2"></i> Contact Us
+                  <i className="fas fa-heart me-2"></i> Donate Now
                 </Link>
 
 

@@ -109,7 +109,11 @@
 }
 
 
-
+/* banner */
+.hero-4 {
+    height: 600px;
+  }
+  
 
 
 
@@ -124,23 +128,16 @@
 /* ===========================[Responsive start]================================= */
 
 /* Laptop (15.6 inch) 💻💻 */
-@media only screen and (min-width : 1400px) {
-
-    /* Header Part Start : */
-
-    /* Header Part End : */
-
-
-    /* Footer Part Start :- */
-
-    /* Footer Part End : */
-
-
-    /* Body Part Start : */
-
-    /* Body Part End : */
-}
-
+@media only screen and (min-width: 1400px) {
+    .main-menu > ul > li > a {
+      padding: 20px 15px;  /* increase clickable space */
+    }
+  
+    .main-menu a {
+      font-size: 17px;     /* slightly larger font for big screens */
+    }
+  }
+  
 /* Laptop (14 inch) 💻 */
 @media only screen and (min-width : 1200px) {
 

@@ -10,7 +10,7 @@ const Counter = () => {
           <div className="counter-card">
             <div className="media-body">
               <h2 className="box-number text-theme">
-                <span className="counter-number">10</span>k
+                <span className="counter-number">1</span>k
                 <span className="fw-light">+</span>
               </h2>
               <p className="box-text">Lives Impacted</p>
@@ -22,7 +22,7 @@ const Counter = () => {
           <div className="counter-card">
             <div className="media-body">
               <h2 className="box-number text-theme2">
-                <span className="counter-number">500</span>
+                <span className="counter-number">15</span>
                 <span className="fw-light">+</span>
               </h2>
               <p className="box-text">Awareness Programs</p>
@@ -34,7 +34,7 @@ const Counter = () => {
           <div className="counter-card">
             <div className="media-body">
               <h2 className="box-number text-theme">
-                <span className="counter-number">200</span>
+                <span className="counter-number">100</span>
                 <span className="fw-light">+</span>
               </h2>
               <p className="box-text">Active Volunteers</p>
@@ -46,7 +46,7 @@ const Counter = () => {
           <div className="counter-card">
             <div className="media-body">
               <h2 className="box-number text-theme2">
-                <span className="counter-number">50</span>
+                <span className="counter-number">12</span>
                 <span className="fw-light">+</span>
               </h2>
               <p className="box-text">Community Projects</p>
