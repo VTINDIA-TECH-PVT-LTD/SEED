@@ -18,7 +18,7 @@ import Contact from "./pages/Contact";
 import Annual from "./pages/Annual";
 import Audit from "./pages/Audit";
 import PdfViewer from "./pages/PdfViewer";
-
+import Volunteer from "./pages/Volunteer";
 
 
 
@@ -41,6 +41,7 @@ function App() {
         <Route path="/reports/annual" element={<Annual />} />
         <Route path="/reports/audit" element={<Audit />} />
         <Route path="/pdf-viewer" element={<PdfViewer />} />
+        <Route path="/get-involved/volunteer" element={<Volunteer />} />
         
 
         <Route path="/contact" element={<Contact />} />
