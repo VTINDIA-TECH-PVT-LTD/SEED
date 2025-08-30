@@ -6,9 +6,9 @@ export default function Volunteer() {
   return (
     <>
       <InnerPageBanner
-        title="Volunteer"
+        title="Volunteers"
         background={bannerImage}
-        breadcrumb="Volunteer"
+        breadcrumb="Volunteers"
       />
 
       <div
