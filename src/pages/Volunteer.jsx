@@ -68,7 +68,7 @@ export default function Volunteer() {
                     {/* Why do you want to volunteer? */}
                     <div className="col-12">
                       <label className="form-label">
-                        Why do you want to volunteer?
+                        Why do you want to volunteers?
                       </label>
                       <textarea
                         className="form-control"
