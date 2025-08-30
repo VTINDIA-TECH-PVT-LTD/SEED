@@ -46,7 +46,7 @@ export default function Volunteer() {
 
                     {/* Phone */}
                     <div className="col-md-6">
-                      <label className="form-label">Phone</label>
+                      <label className="form-label">Phone Number</label>
                       <input
                         type="tel"
                         className="form-control"
