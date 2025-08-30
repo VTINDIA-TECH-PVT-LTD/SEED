@@ -6,9 +6,9 @@ export default function Volunteer() {
   return (
     <>
       <InnerPageBanner
-        title="Volunteer"
+        title="Volunteers"
         background={bannerImage}
-        breadcrumb="Volunteer"
+        breadcrumb="Volunteers"
       />
 
       <div
@@ -46,7 +46,7 @@ export default function Volunteer() {
 
                     {/* Phone */}
                     <div className="col-md-6">
-                      <label className="form-label">Phone</label>
+                      <label className="form-label">Phone Number</label>
                       <input
                         type="tel"
                         className="form-control"
@@ -68,7 +68,7 @@ export default function Volunteer() {
                     {/* Why do you want to volunteer? */}
                     <div className="col-12">
                       <label className="form-label">
-                        Why do you want to volunteer?
+                        Why do you want to volunteers?
                       </label>
                       <textarea
                         className="form-control"
