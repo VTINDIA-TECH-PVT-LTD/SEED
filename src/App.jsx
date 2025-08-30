@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Overview from "./pages/Overview";
 
 import Photos from './pages/Photos';
-import VideoGallery from './pages/VideoGallery';
+import VideoGallery from './pages/Videos';
 
 import Vision_mission from "./pages/Vision_mission";
 import Registration from "./pages/Registration";
@@ -17,7 +17,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Annual from "./pages/Annual";
 import Audit from "./pages/Audit";
-
+import PdfViewer from "./pages/PdfViewer";
 
 
 
@@ -40,7 +40,7 @@ function App() {
         <Route path="/about/team" element={<Team />} />
         <Route path="/reports/annual" element={<Annual />} />
         <Route path="/reports/audit" element={<Audit />} />
-
+        <Route path="/pdf-viewer" element={<PdfViewer />} />
         
 
         <Route path="/contact" element={<Contact />} />

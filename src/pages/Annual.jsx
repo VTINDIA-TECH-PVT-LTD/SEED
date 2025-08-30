@@ -9,13 +9,14 @@ export default function Annual() {
 
   // Sample data for different years
   const reports2025 = [
-    { id: 1, description: "Annual Report 2024-25", file: "/pdfs/report2025.pdf" },
-    { id: 2, description: "Financial Summary 2025", file: "/pdfs/finance2025.pdf" },
+    { id: 1, description: "Annual Report 2024-25", file: "/uploads/SEED_ANNUAL_REPORT.pdf" },
+    { id: 2, description: "Financial Summary 2025", file: "/uploads/demo.pdf" },
   ];
+  
 
   const reports2024 = [
-    { id: 1, description: "Annual Report 2023-24", file: "/pdfs/report2024.pdf" },
-    { id: 2, description: "Financial Summary 2024", file: "/pdfs/finance2024.pdf" },
+    { id: 1, description: "Annual Report 2023-24", file: "/pdfs/demo.pdf" },
+    { id: 2, description: "Financial Summary 2024", file: "/pdfs/demo.pdf" },
   ];
 
   // Pick data based on active year
@@ -123,18 +124,19 @@ export default function Annual() {
                   <td>{index + 1}</td>
                   <td>{report.description}</td>
                   <td>
-                    <a
-                      href={report.file}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src="/uploads/document.png"
-                        alt="PDF Document"
-                        className="pdf-icon"
-                      />
-                    </a>
+                  <Link
+  to={`/pdf-viewer?file=${encodeURIComponent(report.file)}`}
+  
+>
+  <img
+    src="/uploads/document.png"
+    alt="PDF Document"
+    className="pdf-icon"
+/>
+</Link>
+
                   </td>
+
                 </tr>
               ))}
             </tbody>

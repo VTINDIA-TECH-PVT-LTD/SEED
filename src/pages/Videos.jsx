@@ -34,7 +34,7 @@ export default function Videos() {
         breadcrumb="Gallery"
       />
 
-      <VideoGallery heading="SEED Video Gallery" videos={videos} columns={3} />
+      <VideoGallery heading="" videos={videos} columns={3} />
 
 
 

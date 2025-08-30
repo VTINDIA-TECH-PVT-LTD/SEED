@@ -1,57 +1,28 @@
-// src/components/Video.jsx
+// src/components/VideoGallery.jsx
 import React, { useMemo, useState } from "react";
 import { FaPlay, FaTimes } from "react-icons/fa";
 
-/**
- * Video.jsx
- * Props:
- *  - videos: Array of strings OR objects
- *      • string: any YouTube URL/ID
- *      • object: { url?: string, id?: string, title?: string }
- *  - heading?: string
- *  - columns?: number (default 3 on desktop)
- */
-const VideoGallery = ({ videos = [], heading = "Videos", columns = 3 }) => {
+const VideoGallery = ({ videos = [], heading = "Videos", columns = 4 }) => {
   const [activeId, setActiveId] = useState(null);
 
-  // Accept many YouTube formats and return the video ID
+  // Extract video ID
   const toId = (input) => {
     if (!input) return "";
     const str = typeof input === "string" ? input : input.id || input.url || "";
-    // Already an 11-char YouTube ID
     if (/^[\w-]{11}$/.test(str)) return str;
-
-    // Try to extract from URLs
     try {
       const url = new URL(str);
-      // youtu.be/VIDEOID
-      if (url.hostname.includes("youtu.be")) {
-        return url.pathname.replace("/", "").slice(0, 11);
-      }
-      // youtube.com/watch?v=VIDEOID or /embed/VIDEOID or /shorts/VIDEOID
       const vParam = url.searchParams.get("v");
       if (vParam) return vParam.slice(0, 11);
-
       const parts = url.pathname.split("/");
-      const idx = parts.findIndex((p) =>
-        ["embed", "shorts", "v"].includes(p.toLowerCase())
-      );
-      if (idx !== -1 && parts[idx + 1]) return parts[idx + 1].slice(0, 11);
+      return parts.pop().slice(0, 11);
     } catch {
-      // Not a URL; fall through
+      return "";
     }
-    return "";
   };
 
-  // Normalize list to { id, title }
+  // Normalize
   const items = useMemo(() => {
-    if (!videos.length) {
-      return [
-        { id: "dQw4w9WgXcQ", title: "Sample Video 1" },
-        { id: "ysz5S6PUM-U", title: "Sample Video 2" },
-        { id: "aqz-KE-bpKQ", title: "Sample Video 3" },
-      ];
-    }
     return videos
       .map((v) =>
         typeof v === "string"
@@ -64,153 +35,30 @@ const VideoGallery = ({ videos = [], heading = "Videos", columns = 3 }) => {
   const open = (id) => setActiveId(id);
   const close = () => setActiveId(null);
 
-  // Simple inline styles to keep this file self-contained
-  const styles = {
-    section: { padding: "30px 0", background: "#f9f9f9" },
-    container: { maxWidth: 1140, margin: "0 auto", padding: "0 16px" },
-    heading: {
-      textAlign: "center",
-      fontSize: 28,
-      fontWeight: 700,
-      marginBottom: 20,
-      color: "#2b2b2b",
-    },
-    grid: {
-      display: "grid",
-      gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      gap: 16,
-    },
-    card: {
-      position: "relative",
-      borderRadius: 12,
-      overflow: "hidden",
-      background: "#fff",
-      boxShadow: "0 6px 14px rgba(0,0,0,.08)",
-      cursor: "pointer",
-      transition: "transform .25s ease, box-shadow .25s ease",
-    },
-    thumbWrap: {
-      position: "relative",
-      width: "100%",
-      paddingBottom: "56.25%", // 16:9
-      overflow: "hidden",
-      background: "#eee",
-    },
-    thumb: {
-      position: "absolute",
-      inset: 0,
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      transition: "transform .35s ease",
-    },
-    play: {
-      position: "absolute",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      width: 56,
-      height: 56,
-      borderRadius: "999px",
-      display: "grid",
-      placeItems: "center",
-      background: "#4fad0a",
-      color: "#fff",
-      boxShadow: "0 8px 18px rgba(79,173,10,.35)",
-      transition: "transform .25s ease",
-    },
-    title: {
-      padding: "10px 14px 14px",
-      fontSize: 15,
-      fontWeight: 600,
-      color: "#2b2b2b",
-    },
-    modal: {
-      position: "fixed",
-      inset: 0,
-      background: "rgba(0,0,0,.85)",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 9999,
-      padding: 16,
-    },
-    modalInner: {
-      width: "min(100%, 960px)",
-      aspectRatio: "16 / 9",
-      background: "#000",
-      borderRadius: 12,
-      overflow: "hidden",
-      boxShadow: "0 20px 40px rgba(0,0,0,.4)",
-      position: "relative",
-    },
-    iframe: {
-      width: "100%",
-      height: "100%",
-      border: "none",
-      display: "block",
-    },
-    closeBtn: {
-      position: "absolute",
-      top: -44,
-      right: 0,
-      background: "#4fad0a",
-      color: "#fff",
-      border: "none",
-      padding: "10px 12px",
-      borderRadius: 8,
-      cursor: "pointer",
-      display: "inline-flex",
-      alignItems: "center",
-      gap: 8,
-      boxShadow: "0 8px 18px rgba(79,173,10,.35)",
-    },
-  };
-
   return (
-    <section style={styles.section}>
-      <div style={styles.container}>
-        {heading && <h2 style={styles.heading}>{heading}</h2>}
+    <section className="video-section">
+      <div className="container">
+        {heading && <h2 className="video-heading">{heading}</h2>}
 
-        <div
-          style={styles.grid}
-          className="video-grid"
-        >
+        <div className="video-grid">
           {items.map(({ id, title }, idx) => (
-            <div
-              key={id + idx}
-              style={styles.card}
-              className="video-card"
-              onMouseEnter={(e) => {
-                const img = e.currentTarget.querySelector("img");
-                if (img) img.style.transform = "scale(1.05)";
-                const play = e.currentTarget.querySelector(".play-badge");
-                if (play) play.style.transform = "translate(-50%, -50%) scale(1.05)";
-              }}
-              onMouseLeave={(e) => {
-                const img = e.currentTarget.querySelector("img");
-                if (img) img.style.transform = "scale(1)";
-                const play = e.currentTarget.querySelector(".play-badge");
-                if (play) play.style.transform = "translate(-50%, -50%) scale(1)";
-              }}
-            >
+            <div key={id + idx} className="video-card">
               <button
                 aria-label={`Play ${title || "video"}`}
                 onClick={() => open(id)}
-                style={{ all: "unset", display: "block" }}
+                className="video-btn"
               >
-                <div style={styles.thumbWrap}>
+                <div className="thumb-wrap">
                   <img
                     src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
                     alt={title || "Video thumbnail"}
-                    style={styles.thumb}
                     loading="lazy"
                   />
-                  <div className="play-badge" style={styles.play}>
-                    <FaPlay />
+                  <div className="overlay">
+                    <FaPlay className="play-icon" />
+                    {title && <span className="video-title">{title}</span>}
                   </div>
                 </div>
-                {title ? <div style={styles.title}>{title}</div> : null}
               </button>
             </div>
           ))}
@@ -219,17 +67,12 @@ const VideoGallery = ({ videos = [], heading = "Videos", columns = 3 }) => {
 
       {/* Modal */}
       {activeId && (
-        <div style={styles.modal} onClick={close} role="dialog" aria-modal="true">
-          <div
-            style={styles.modalInner}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button style={styles.closeBtn} onClick={close} aria-label="Close video">
-              <FaTimes />
-              Close
+        <div className="video-modal" onClick={close}>
+          <div className="modal-inner" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={close}>
+              <FaTimes /> Close
             </button>
             <iframe
-              style={styles.iframe}
               src={`https://www.youtube.com/embed/${activeId}?autoplay=1&rel=0`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -239,13 +82,86 @@ const VideoGallery = ({ videos = [], heading = "Videos", columns = 3 }) => {
         </div>
       )}
 
-      {/* Small responsive tweak */}
+      {/* CSS */}
       <style>{`
+        .video-section { padding: 40px 0; background: #f9f9f9; }
+        
+        .video-heading { text-align: center; font-size: 28px; font-weight: 700; margin-bottom: 24px; }
+
+        .video-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+        }
+        .video-card {
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 6px 14px rgba(0,0,0,.08);
+          transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .video-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 10px 20px rgba(0,0,0,.12);
+        }
+        .video-btn { all: unset; display: block; width: 100%; cursor: pointer; }
+        .thumb-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+        .thumb-wrap img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform .4s ease;
+        }
+        .video-card:hover img { transform: scale(1.1); }
+        
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.05));
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 12px;
+          opacity: 0;
+          transition: opacity .3s ease;
+        }
+        .video-card:hover .overlay { opacity: 1; }
+        .play-icon {
+          font-size: 40px;
+          color: #4fad0a;
+          margin-bottom: 8px;
+        }
+        .video-title { color: #fff; font-size: 16px; font-weight: 600; text-align: center; }
+
+        /* Modal */
+        .video-modal {
+          position: fixed; inset: 0;
+          background: rgba(0,0,0,.85);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 9999; padding: 16px;
+        }
+        .modal-inner {
+          width: min(100%, 960px);
+          aspect-ratio: 16/9;
+          background: #000;
+          border-radius: 12px;
+          overflow: hidden;
+          position: relative;
+        }
+        .modal-inner iframe { width: 100%; height: 100%; border: none; }
+        .close-btn {
+          position: absolute; top: -44px; right: 0;
+          background: #4fad0a; color: #fff; border: none;
+          padding: 10px 14px; border-radius: 8px;
+          cursor: pointer; display: flex; align-items: center; gap: 6px;
+        }
+
+        /* Responsive */
         @media (max-width: 992px) {
-          .video-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .video-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
-          .video-grid { grid-template-columns: 1fr !important; }
+          .video-grid { grid-template-columns: 1fr; }
         }
       `}</style>
     </section>
