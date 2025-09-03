@@ -27,7 +27,7 @@ export default function Contact() {
                   <div className="media-body">
                     <h3 className="box-title">Address</h3>
                     <p className="box-text">
-                    Subhadra Nagar Lane, Bidanasi, Cuttack-14
+                      Subhadra Nagar Lane, Bidanasi, Cuttack-14
                     </p>
                   </div>
                 </div>
@@ -41,7 +41,6 @@ export default function Contact() {
                     <p className="box-text">
                       <a href="tel:+91 9437314152">+91 9437314152</a>
                     </p>
-                    
                   </div>
                 </div>
 
@@ -52,9 +51,10 @@ export default function Contact() {
                   <div className="media-body">
                     <h3 className="box-title">Email</h3>
                     <p className="box-text">
-                      <a href="mailto:seedodisha1971@gmail.com">seedodisha1971@gmail.com</a>
+                      <a href="mailto:seedodisha1971@gmail.com">
+                        seedodisha1971@gmail.com
+                      </a>
                     </p>
-                    
                   </div>
                 </div>
 
@@ -74,16 +74,15 @@ export default function Contact() {
               {/* Right Side - Map */}
               <div className="col-xl-8 col-lg-7">
                 <div className="contact-map">
-                <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14619.042985865592!2d85.84944979725221!3d20.471689555173676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c979fdba03%3A0x7a53745479d1b7bc!2sSubhadra%20Nagar%2C%20Bidanasi%2C%20Cuttack%2C%20Odisha%20753008!5e0!3m2!1sen!2sin!4v1724588058965!5m2!1sen!2sin"
-  width="100%"
-  height="450"
-  style={{ border: 0 }}
-  allowFullScreen=""
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
-
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14619.042985865592!2d85.84944979725221!3d20.471689555173676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c979fdba03%3A0x7a53745479d1b7bc!2sSubhadra%20Nagar%2C%20Bidanasi%2C%20Cuttack%2C%20Odisha%20753008!5e0!3m2!1sen!2sin!4v1724588058965!5m2!1sen!2sin"
+                    width="100%"
+                    height="450"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </div>
@@ -125,11 +124,15 @@ export default function Contact() {
                       </div>
                       <div className="form-group style-border col-12">
                         <input
-                          type="number"
+                          type="tel"
                           className="form-control"
-                          name="number"
-                          id="number"
+                          name="phone"
+                          id="phone"
                           placeholder="Phone Number"
+                          pattern="[0-9]{10,15}" // allows only digits, min 10, max 15
+                          inputMode="numeric" // mobile shows number keypad
+                          minLength={10}
+                          required
                         />
                       </div>
                       <div className="form-group style-border col-12">

@@ -9,13 +9,20 @@ export default function Annual() {
 
   // Sample data for different years
   const reports2025 = [
-    { id: 1, description: "Annual Report 2024-25", file: "/uploads/SEED_ANNUAL_REPORT.pdf" },
+    {
+      id: 1,
+      description: "Annual Report 2024-25",
+      file: "/uploads/SEED_ANNUAL_REPORT.pdf",
+    },
     { id: 2, description: "Financial Summary 2025", file: "/uploads/demo.pdf" },
   ];
-  
 
   const reports2024 = [
-    { id: 1, description: "Annual Report 2023-24", file: "/pdfs/demo.pdf" },
+    {
+      id: 1,
+      description: "Annual Report 2023-24",
+      file: "/uploads/Anual Report of seed.pdf",
+    },
     { id: 2, description: "Financial Summary 2024", file: "/pdfs/demo.pdf" },
   ];
 
@@ -95,18 +102,54 @@ export default function Annual() {
         <div className="container">
           {/* Tabs */}
           <div className="tabs">
-            <button
-              className={`tab-btn ${activeYear === "2025" ? "active" : ""}`}
-              onClick={() => setActiveYear("2025")}
+            <select
+              className="tab-dropdown"
+              value={activeYear}
+              onChange={(e) => setActiveYear(e.target.value)}
+              style={{
+                width: "150px", // small bar
+                padding: "6px 10px",
+                borderRadius: "50px",
+                textAlign: "center",
+                cursor: "pointer",
+                backgroundColor: "#4fad0a",
+                color: "#fff",
+                fontWeight: "600",
+                fontSize: "15px",
+                border: "2px solid #4fad0a",
+                boxShadow: "0px 3px 6px rgba(0,0,0,0.15)",
+                appearance: "none",
+                WebkitAppearance: "none",
+                MozAppearance: "none",
+              }}
             >
-              2025
-            </button>
-            <button
-              className={`tab-btn ${activeYear === "2024" ? "active" : ""}`}
-              onClick={() => setActiveYear("2024")}
-            >
-              2024
-            </button>
+              <option
+                value="2025"
+                style={{
+                  backgroundColor: "#4fad0a",
+                  color: "#fff",
+                  fontWeight: "600",
+                  borderRadius: "50px",
+                  fontSize: "15px",
+                  padding: "6px 10px",
+                }}
+              >
+                2025
+              </option>
+              <option
+                value="2024"
+                style={{
+                  backgroundColor: "#4fad0a",
+                  color: "#fff",
+                  fontWeight: "600",
+                  fontSize: "15px",
+                  padding: "6px 10px",
+                  borderRadius: "50px",
+                }}
+              >
+                2024
+              </option>
+            </select>
           </div>
 
           {/* Table */}
@@ -124,19 +167,16 @@ export default function Annual() {
                   <td>{index + 1}</td>
                   <td>{report.description}</td>
                   <td>
-                  <Link
-  to={`/pdf-viewer?file=${encodeURIComponent(report.file)}`}
-  
->
-  <img
-    src="/uploads/document.png"
-    alt="PDF Document"
-    className="pdf-icon"
-/>
-</Link>
-
+                    <Link
+                      to={`/pdf-viewer?file=${encodeURIComponent(report.file)}`}
+                    >
+                      <img
+                        src="/uploads/document.png"
+                        alt="PDF Document"
+                        className="pdf-icon"
+                      />
+                    </Link>
                   </td>
-
                 </tr>
               ))}
             </tbody>

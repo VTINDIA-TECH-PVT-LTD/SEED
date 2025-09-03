@@ -15,10 +15,10 @@ const Topbar = () => {
 
                         {/* ✅ Left: Location & Email */}
                         <div className="col-auto d-none d-lg-flex align-items-center gap-4">
-                            <p className="mb-0">
+                            {/* <p className="mb-0">
                                 <i className="fas fa-map-marker-alt me-2" style={{ color: "#bf8283" }}></i>
                                 Subhadra Nagar lane, Bidanasi, Cuttack-753014
-                            </p>
+                            </p> */}
                             <p className="mb-0 ms-4">
                                 <i className="fas fa-envelope me-2" style={{ color: "#bf8283" }}></i>
                                 seedodisha1971@gmail.com

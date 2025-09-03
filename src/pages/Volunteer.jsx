@@ -50,7 +50,12 @@ export default function Volunteer() {
                       <input
                         type="tel"
                         className="form-control"
-                        placeholder="Enter your phone number"
+                        name="phone"
+                        id="phone"
+                        placeholder="Phone Number"
+                        pattern="[0-9]{10,15}" // allows only digits, min 10, max 15
+                        inputMode="numeric" // mobile shows number keypad
+                        minLength={10}
                         required
                       />
                     </div>

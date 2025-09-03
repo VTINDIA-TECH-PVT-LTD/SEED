@@ -10,6 +10,7 @@ import TeamSection from "../components/TeamSection";
 import Activities from "../components/Activities";
 import Testimonials from "../components/Testimonials";
 import Counter from "../components/Counter";
+import ChairmanSection from "../components/ChairmanSection";
 
 
 export default function Home() {
@@ -19,6 +20,8 @@ export default function Home() {
       <Banner />
 
       <AboutSection />
+
+      <ChairmanSection />
 
       <Services />
 
