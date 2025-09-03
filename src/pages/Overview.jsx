@@ -27,7 +27,7 @@ export default function Overview() {
           </div>
           <h3 className="box-title" id="overviewcardtitle">Education for All</h3>
           <p className="box-text justify">
-            We work to ensure access to quality education for children and youth, empowering them for a brighter future.
+            We work to ensure access to quality education for children and youth, empowering for a brighter future.
           </p>
           {/* <a className="link-btn style2" href="/about">
             View Details <i className="fa-solid fa-arrow-up-right ms-2"></i>
@@ -44,7 +44,7 @@ export default function Overview() {
           </div>
           <h3 className="box-title">Health & Nutrition</h3>
           <p className="box-text justify">
-            Providing healthcare support, awareness camps, and nutrition programs for underprivileged communities.
+            Providing healthcare support, awareness camps, and nutrition for underprivileged communities.
           </p>
           {/* <a className="link-btn style2" href="/about">
             View Details <i className="fa-solid fa-arrow-up-right ms-2"></i>

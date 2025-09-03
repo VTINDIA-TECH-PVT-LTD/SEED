@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookF, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
 import { Link } from "react-router-dom";
-import seedLogo from "../assets/seedlogo.png";
+import seedLogo from "../assets/seedlogo6.png";
 
 
 export default function Footer() {

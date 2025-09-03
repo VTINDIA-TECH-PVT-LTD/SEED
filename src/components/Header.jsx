@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import seedLogo from "../assets/seedlogo.png";
+import seedLogo from "../assets/seedlogo6.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,17 +16,19 @@ const Header = () => {
       <div className={`th-menu-wrapper ${menuOpen ? "th-body-visible" : ""}`}>
         <div className="th-menu-area text-center">
           {/* Close Button */}
-          <button
-            className="th-menu-toggle"
-            onClick={() => setMenuOpen(false)}
-          >
+          <button className="th-menu-toggle" onClick={() => setMenuOpen(false)}>
             <i className="fal fa-times"></i>
           </button>
 
           {/* Mobile Logo */}
-          <div className="mobile-logo">
+          <div className="mobile-logo text-center">
             <Link to="/">
-              <img src={seedLogo} alt="SEED Logo" />
+              <img
+                src={seedLogo}
+                alt="SEED Logo"
+                className="h-12 w-auto mx-auto object-contain"
+                style={{ maxHeight: "60px" }}
+              />
             </Link>
           </div>
 
@@ -34,13 +36,16 @@ const Header = () => {
           <div className="th-mobile-menu">
             <ul>
               <li>
-                <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+                <Link to="/" onClick={() => setMenuOpen(false)}>
+                  Home
+                </Link>
               </li>
 
               {/* About Us */}
               <li
-                className={`menu-item-has-children ${openSubmenu === "about" ? "th-active" : ""
-                  }`}
+                className={`menu-item-has-children ${
+                  openSubmenu === "about" ? "th-active" : ""
+                }`}
               >
                 <a
                   href="#"
@@ -57,17 +62,48 @@ const Header = () => {
                     display: openSubmenu === "about" ? "block" : "none",
                   }}
                 >
-                  <li><Link to="/about/overview" onClick={() => setMenuOpen(false)}>Overview</Link></li>
-                  <li><Link to="/about/vision-mission" onClick={() => setMenuOpen(false)}>Vision & Mission</Link></li>
-                  <li><Link to="/about/registration" onClick={() => setMenuOpen(false)}>Registration Details</Link></li>
-                  <li><Link to="/about/team" onClick={() => setMenuOpen(false)}>Team & Members</Link></li>
+                  <li>
+                    <Link
+                      to="/about/overview"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Overview
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/about/vision-mission"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Vision & Mission
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/about/registration"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      Registration Details
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about/team" onClick={() => setMenuOpen(false)}>
+                      Team & Members
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about/chairman-desk" onClick={() => setMenuOpen(false)}>
+                      Chairmandesk
+                    </Link>
+                  </li>
                 </ul>
               </li>
 
               {/* Programs */}
               <li
-                className={`menu-item-has-children ${openSubmenu === "programs" ? "th-active" : ""
-                  }`}
+                className={`menu-item-has-children ${
+                  openSubmenu === "programs" ? "th-active" : ""
+                }`}
               >
                 <a
                   href="#"
@@ -84,21 +120,52 @@ const Header = () => {
                     display: openSubmenu === "programs" ? "block" : "none",
                   }}
                 >
-                  <li><Link to="/programs/human-rights">Human Rights Awareness</Link></li>
-                  <li><Link to="/programs/swachh-bharat">Swachh Bharat Abhiyan</Link></li>
-                  <li><Link to="/programs/women-empowerment">Women Empowerment</Link></li>
-                  <li><Link to="/programs/skill-development">Skill Development</Link></li>
-                  <li><Link to="/programs/cultural">Cultural Programs</Link></li>
-                  <li><Link to="/programs/education-scst">Education for SC/ST Girls</Link></li>
-                  <li><Link to="/programs/environment">Environment Awareness</Link></li>
-                  <li><Link to="/programs/sports">Sports Development</Link></li>
-                  <li><Link to="/programs/health-camps">Health Camps</Link></li>
+                  <li>
+                    <Link to="/programs/human-rights">
+                      Human Rights Awareness
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/swachh-bharat">
+                      Swachh Bharat Abhiyan
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/women-empowerment">
+                      Women Empowerment
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/skill-development">
+                      Skill Development
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/cultural">Cultural Programs</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/education-scst">
+                      Education for SC/ST Girls
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/environment">
+                      Environment Awareness
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/sports">Sports Development</Link>
+                  </li>
+                  <li>
+                    <Link to="/programs/health-camps">Health Camps</Link>
+                  </li>
                 </ul>
               </li>
 
               <li
-                className={`menu-item-has-children ${openSubmenu === "reports" ? "th-active" : ""
-                  }`}
+                className={`menu-item-has-children ${
+                  openSubmenu === "reports" ? "th-active" : ""
+                }`}
               >
                 <a
                   href="#"
@@ -115,16 +182,20 @@ const Header = () => {
                     display: openSubmenu === "reports" ? "block" : "none",
                   }}
                 >
-                  <li><Link to="/reports/annual">Annual</Link></li>
-                  <li><Link to="/reports/audit">Audit</Link></li>
+                  <li>
+                    <Link to="/reports/annual">Annual</Link>
+                  </li>
+                  <li>
+                    <Link to="/reports/audit">Audit</Link>
+                  </li>
                 </ul>
               </li>
 
-
               {/* Gallery */}
               <li
-                className={`menu-item-has-children ${openSubmenu === "gallery" ? "th-active" : ""
-                  }`}
+                className={`menu-item-has-children ${
+                  openSubmenu === "gallery" ? "th-active" : ""
+                }`}
               >
                 <a
                   href="#"
@@ -141,17 +212,26 @@ const Header = () => {
                     display: openSubmenu === "gallery" ? "block" : "none",
                   }}
                 >
-                  <li><Link to="/gallery/photos">Photos</Link></li>
-                  <li><Link to="/gallery/videogallery">Videos</Link></li>
+                  <li>
+                    <Link to="/gallery/photos">Photos</Link>
+                  </li>
+                  <li>
+                    <Link to="/gallery/videogallery">Videos</Link>
+                  </li>
                 </ul>
               </li>
 
-              <li><Link to="/news-events" onClick={() => setMenuOpen(false)}>News & Events</Link></li>
+              <li>
+                <Link to="/news-events" onClick={() => setMenuOpen(false)}>
+                  News & Events
+                </Link>
+              </li>
 
               {/* Get Involved */}
               <li
-                className={`menu-item-has-children ${openSubmenu === "getinvolved" ? "th-active" : ""
-                  }`}
+                className={`menu-item-has-children ${
+                  openSubmenu === "getinvolved" ? "th-active" : ""
+                }`}
               >
                 <a
                   href="#"
@@ -168,13 +248,21 @@ const Header = () => {
                     display: openSubmenu === "getinvolved" ? "block" : "none",
                   }}
                 >
-                  <li><Link to="/get-involved/volunteer">Volunteer</Link></li>
+                  <li>
+                    <Link to="/get-involved/volunteer">Volunteer</Link>
+                  </li>
 
-                  <li><Link to="/get-involved/partnership">Partnership</Link></li>
+                  <li>
+                    <Link to="/get-involved/partnership">Partnership</Link>
+                  </li>
                 </ul>
               </li>
 
-              <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact Us</Link></li>
+              <li>
+                <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -188,9 +276,14 @@ const Header = () => {
             <div className="row justify-content-center justify-content-lg-between align-items-center gy-2">
               {/* Logo for Desktop */}
               <div className="col-auto d-none d-lg-block">
-                <div className="header-logo">
+                <div className="header-logo text-center">
                   <Link to="/">
-                    <img src={seedLogo} alt="SEED Logo" />
+                    <img
+                      src={seedLogo}
+                      alt="SEED Logo"
+                      className="img-fluid"
+                      style={{ maxHeight: "100px" }} // keeps logo responsive
+                    />
                   </Link>
                 </div>
               </div>
@@ -231,7 +324,9 @@ const Header = () => {
                     <div className="box-content">
                       <p className="box-text">Call us any time:</p>
                       <h4 className="box-title">
-                        <a id="headertel" href="tel:9437314152">+91 9437314152</a>
+                        <a id="headertel" href="tel:9437314152">
+                          +91 9437314152
+                        </a>
                       </h4>
                     </div>
                   </div>
@@ -246,7 +341,10 @@ const Header = () => {
                     <div className="box-content">
                       <p className="box-text">Email us any time:</p>
                       <h4 className="box-title">
-                        <a id="headeremail" href="mailto:seedodisha1971@gmail.com">
+                        <a
+                          id="headeremail"
+                          href="mailto:seedodisha1971@gmail.com"
+                        >
                           seedodisha1971@gmail.com
                         </a>
                       </h4>
@@ -254,7 +352,6 @@ const Header = () => {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -277,27 +374,42 @@ const Header = () => {
                 <nav className="main-menu d-none d-lg-block">
                   <ul>
                     <li>
-                      <Link to="/" className="menubaradjust">Home</Link>
+                      <Link to="/" className="menubaradjust">
+                        Home
+                      </Link>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#" className="menubaradjust">About Us</Link>
+                      <Link to="#" className="menubaradjust">
+                        About Us
+                      </Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/about/overview">Overview</Link>
                         </li>
                         <li>
-                          <Link to="/about/vision-mission">Vision & Mission</Link>
+                          <Link to="/about/vision-mission">
+                            Vision & Mission
+                          </Link>
                         </li>
                         <li>
-                          <Link to="/about/registration">Registration Details</Link>
+                          <Link to="/about/registration">
+                            Registration Details
+                          </Link>
                         </li>
                         <li>
                           <Link to="/about/team">Team & Members</Link>
                         </li>
+                          <li>
+                    <Link to="/about/chairman-desk" onClick={() => setMenuOpen(false)}>
+                      Chairmandesk
+                    </Link>
+                  </li>
                       </ul>
                     </li>
                     <li className="menu-item-has-children">
-                      <Link to="#" className="menubaradjust">Programs & Activities</Link>
+                      <Link to="#" className="menubaradjust">
+                        Programs & Activities
+                      </Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/programs/human-rights">
@@ -342,29 +454,40 @@ const Header = () => {
                     </li>
 
                     <li className="menu-item-has-children">
-                      <Link to="#" className="menubaradjust">Reports </Link>
+                      <Link to="#" className="menubaradjust">
+                        Reports{" "}
+                      </Link>
                       <ul className="sub-menu">
-                        <li><Link to="/reports/annual">Annual Reports</Link></li>
-                        <li><Link to="/reports/audit">Audit Reports</Link></li>
+                        <li>
+                          <Link to="/reports/annual">Annual Reports</Link>
+                        </li>
+                        <li>
+                          <Link to="/reports/audit">Audit Reports</Link>
+                        </li>
                       </ul>
                     </li>
 
-
                     <li className="menu-item-has-children">
-                      <Link to="#" className="menubaradjust">Get Involved</Link>
+                      <Link to="#" className="menubaradjust">
+                        Get Involved
+                      </Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/get-involved/volunteer">Volunteer</Link>
                         </li>
 
                         <li>
-                          <Link to="/get-involved/partnership">Partnership</Link>
+                          <Link to="/get-involved/partnership">
+                            Partnership
+                          </Link>
                         </li>
                       </ul>
                     </li>
 
                     <li className="menu-item-has-children">
-                      <Link to="#" className="menubaradjust">Gallery</Link>
+                      <Link to="#" className="menubaradjust">
+                        Gallery
+                      </Link>
                       <ul className="sub-menu">
                         <li>
                           <Link to="/gallery/photos">Photos</Link>
@@ -375,9 +498,10 @@ const Header = () => {
                       </ul>
                     </li>
 
-
                     <li>
-                      <Link to="/contact" className="menubaradjust">Contact</Link>
+                      <Link to="/contact" className="menubaradjust">
+                        Contact
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -394,15 +518,14 @@ const Header = () => {
 
               {/* Buttons */}
               <div className="header-button">
-
                 {/* Contact Button */}
-                <Link id="headercontactbtn"
+                <Link
+                  id="headercontactbtn"
                   to="/donate"
                   className="th-btn style3 d-lg-block d-none"
                 >
                   <i className="fas fa-heart me-2"></i> Donate Now
                 </Link>
-
 
                 <button
                   type="button"
@@ -416,8 +539,6 @@ const Header = () => {
           </div>
         </div>
       </header>
-
-
     </>
   );
 };
